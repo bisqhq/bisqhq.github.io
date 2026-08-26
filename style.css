@@ -1,1 +1,179 @@
+<style type="text/css">
 
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Shippori+Mincho+B1:wght@400;500&display=swap');
+
+body {
+    background: #fff;
+    color: #333;
+    font-size: 11px;
+    font-family:
+'Crimson Text',
+'Shippori Mincho B1',
+'STHeitiSC-Light',
+'Microsoft YaHei',
+gulim,
+メイリオ,
+serif;
+    line-height: 180%;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+a {
+    color: #f08300;
+    text-decoration: underline;
+}
+
+a:hover, active {
+    position: relative;
+    top: 0;
+    color: #333;
+    text-decoration: none;
+}
+
+h1,h2 {
+    font-family:'Crimson Text','Shippori Mincho B1', 'STHeitiSC-Light', 'Microsoft YaHei', gulim, メイリオ, sans-serif;
+    font-size: 14px;
+    margin: 20px 0 5px;
+}
+
+h2 {
+    font-size: 12px;
+    margin: 10px 0;
+    padding: 0 3px;
+    display: inline-block;
+    border-bottom: solid 2px #f7dc8d;
+}
+
+hr {
+    border: none;
+    border-top: solid 1px #eee;
+    margin:15px 0;
+}
+
+.wrp {
+    max-width: 500px;
+    margin: 50px auto 10px;
+}
+
+.top {
+    margin: 0 20px;
+    font-size:12px;
+}
+
+.menu a,.menu p{
+    display: inline-block;
+    margin-right:10px;
+}
+
+.menu p {
+    font-weight: 700;
+}
+
+.info,.main {
+    margin: 5px 20px 30px;
+    padding: 15px;
+    border: solid 2px #eee;
+    border-radius: 5px;
+    position: relative;
+}
+
+.info::before,.main::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: 20px;
+    top: -15px;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #eee;
+    border-left: 15px solid transparent;
+}
+
+.info::after,.main::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: 20px;
+    top: -12px;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #fff;
+    border-left: 15px solid transparent;
+}
+
+.text {
+    margin: 5px 20px 30px;
+    padding: 15px;
+    border: solid 2px #eee;
+    border-radius: 5px;
+}
+
+.info::before,
+.info::after {
+    left: 0px;
+}
+
+.main::before,
+.main::after {
+    left: 50px;
+}
+
+.main p {
+    padding-left: 10px;
+    color: #888;
+   display: table-cell;
+}
+
+.sec {
+    display: table-cell;
+    width: 100px;
+}
+
+.ft {
+    margin:0 20px 30px;
+    text-align: right;
+}
+
+input[type], textarea {
+    height: 80px;
+    width: 95%;
+    font-size: 11px;
+    font-family:
+    'Crimson Text',
+    'Shippori Mincho B1',
+    'STHeitiSC-Light',
+    'Microsoft YaHei',
+    gulim,
+    メイリオ,
+    serif;
+    line-height: 180%;
+    letter-spacing: 2px;
+    color: #333;
+    background: #eee;
+    border: solid 1px #fff;
+        -webkit-appearance: none;
+    border-radius: 3px;
+    box-shadow: none;
+    margin: 3px 0;
+    padding: 3px;
+}
+
+input[type=text ]{
+    height: auto;
+    width: 80px;
+}
+
+input[type=submit]{
+    height: auto;
+    width: 50px;
+    cursor: pointer;
+    text-shadow: none;
+    background: #f7dc8d;
+    font-weight: 200;
+}
+</style>
