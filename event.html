@@ -6,6 +6,32 @@
     <meta name="robots" content="noindex,nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <!-- ▼ ここに専用のコンパクト化デザインを置くよ！ -->
+    <style>
+        .event-form {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+        .event-form input[type="password"] {
+            width: 120px;
+            padding: 3px 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .event-form input[type="button"] {
+            width: 40px;
+            padding: 3px 0;
+            background: #f7dc8d;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
 
@@ -37,7 +63,7 @@
     function checkPassword() {
         const input = document.getElementById('passInput').value;
         
-        // ★ここを自分の好きな合言葉に変更してね！
+        // ★合言葉は '0420' に設定中！
         const correctPass = '0420'; 
 
         if (input === correctPass) {
