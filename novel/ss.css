@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+/* Template & Designed by Towako. */
+/* https://ninawas.me */
+
+/* ウェブフォントの読み込み */
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap');
+
+@font-face {
+    font-family: 'はんなり明朝';
+    font-display: swap;
+    src: url('https://cdn.leafscape.be/hannari/hannari_web.woff2') format("woff2");
+}
+
+/*-------------------------------------------------
+このフォントはIPAフォントライセンスv1.0の下で提供されています。
+http://ipafont.ipa.go.jp/ipa_font_license_v1.html
+-------------------------------------------------*/
+
+/* 全体に適用する */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-family: 'Noto Serif JP', serif;
+}
+
+/* リンク */
+a {
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    color: #000;
+}
+
+/* 基本設定 */
+body {
+    text-align: justify;
+    word-break: break-all;
+    background-color: #fff;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    color: #000;
+}
+
+/* コンテナサイズ */
+header,
+section,
+article,
+footer {
+    margin: 3em auto;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* 見出し */
+header h1 {
+    margin: 3em auto 0;
+}
+
+/* フォントの指定 */
+header h1 span,
+article h2 {
+    font-family: 'はんなり明朝', 'Noto Serif JP', serif;
+}
+
+/* フェードイン */
+header h1 span:nth-of-type(1) {
+    animation: FadeIn 1s;
+}
+
+header h1 span:nth-of-type(2) {
+    animation: FadeIn 2s;
+}
+
+header h1 span:nth-of-type(3) {
+    animation: FadeIn 3s;
+}
+
+header h1 span:nth-of-type(4) {
+    animation: FadeIn 4s;
+}
+
+/* アイコン */
+.icon {
+    display: inline-block;
+    margin: 1.5em 1em 1em;
+    width: 15px;
+    height: 15px;
+    background: url('画像URL') center/cover;
+    transform: rotate(45deg);
+}
+
+/* アイコンフェードイン */
+header .one {
+    animation: FadeIn 1s;
+}
+
+header .two {
+    animation: FadeIn 2s;
+}
+
+header .three {
+    animation: FadeIn 3s;
+}
+
+/* ヘッダー段落フェードイン */
+header p {
+    animation: FadeIn .5s;
+    color: #a0a0a0;
+}
+
+/* リスト系 */
+section ol {
+    margin: 2em auto 1.5em 0.5em;
+    list-style-type: decimal-leading-zero;
+}
+
+section ol li {
+    margin: 1em auto;
+    list-style-position: inside;
+}
+
+section ol li:nth-of-type(odd) a {
+    border-bottom: 3px solid #bcb8fc;
+}
+
+section ol li:nth-of-type(even) a {
+    border-bottom: 3px solid #cebbfc;
+}
+
+/* フッター  */
+footer p {
+    color: #a0a0a0;
+}
+
+/* 段落 */
+p {
+    margin: 1em auto 1.5em;
+}
+
+/* メニュー */
+.menu {
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    margin: 0 1em;
+}
+
+/* 中央寄せ */
+.center {
+    text-align: center;
+}
+
+/* フォーム系 */
+textarea,
+input[type] {
+    -webkit-appearance: none;
+    padding: 0.2em 0.5em;
+    background-color: #fff;
+    border: thin solid #bcb8fc;
+    border-radius: 0;
+}
+
+textarea {
+    width: 280px;
+    height: 150px;
+}
+
+input[type=text] {
+    width: 80px;
+}
+
+input[type=submit] {
+    width: auto;
+}
+
+/* アニメーション */
+@keyframes FadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+.kenten {
+    text-emphasis: filled sesame;
+    -webkit-text-emphasis: filled sesame;
+}
+
+rt {
+    font-size: 60%;
+}
