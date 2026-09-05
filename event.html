@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webイベント会場</title>
+    <meta name="robots" content="noindex,nofollow"> <!-- 検索避け -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h2>Webイベント公開ページ</h2>
+
+    <!-- ▼ 【ステップ1】パスワード入力エリア -->
+    <div id="lockArea" class="center" style="margin-top: 3em;">
+        <p>この先はWebイベントの合言葉が必要です。</p>
+        <p style="margin-bottom: 1em; color: #a0a0a0; font-size: 90%;">合言葉はイベント告知ページをご確認ください。</p>
+        
+        <input type="password" id="passInput" placeholder="合言葉を入力" style="width: 150px; margin-right: 0.5em;">
+        <button type="button" onclick="checkPassword()" style="cursor: pointer; padding: 0.2em 1em; background: #f08300; color: #fff; border: none;">入室</button>
+        
+        <p id="errorMsg" style="color: #ff0000; display: none; margin-top: 1em;">合言葉が違います</p>
+    </div>
+
+    <!-- ▼ 【ステップ2】合言葉が合っているときだけ表示される本文エリア -->
+    <div id="secretContent" class="novel-text" style="display: none;">
+        <p>ここにイベント用の秘密の小説本文を書くよ！</p>
+        <p>改行もルビも、いつも通りの書き方でOKです。</p>
+    </div>
+
+<script>
+    function checkPassword() {
+        const input = document.getElementById('passInput').value;
+        
+        // ★ここを自分の好きな合言葉に変更してね！
+        const correctPass = '0420'; 
+
+        if (input === correctPass) {
+            // パスワード合致：入力欄を消して、本文を表示する
+            document.getElementById('lockArea').style.display = 'none';
+            document.getElementById('secretContent').style.display = 'block';
+        } else {
+            // パスワード間違い：エラーメッセージを出す
+            document.getElementById('errorMsg').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
