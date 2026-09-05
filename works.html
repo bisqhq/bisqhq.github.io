@@ -26,8 +26,12 @@ Updates : #blog1_#latest_blog1_date##<br>
 
 <div class="text">
 基本変換なしです
-<form action="/bisqhq/novel/1/dream" method="post">
-<input class="sh" type="text" name="DreamID[1]" value="苗字"> <input class="sh" type="text" name="DreamID[2]" value="名前"> <input class="sh2" type="submit" name="set" value="○"><br>
+<!-- 送信フォームではなく、JavaScriptで動かす入力エリアにする -->
+<div class="name-form">
+    <input type="text" id="seiInput" value="苗字" style="width: 80px;"> 
+    <input type="text" id="meiInput" value="名前" style="width: 80px;"> 
+    <input type="button" value="○" onclick="saveName()" style="cursor: pointer;">
+</div><br>
 
 <hr>
 
