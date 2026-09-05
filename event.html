@@ -6,32 +6,6 @@
     <meta name="robots" content="noindex,nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
-    <!-- ▼ ここに専用のコンパクト化デザインを置くよ！ -->
-    <style>
-        .event-form {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4px;
-        }
-        .event-form input[type="password"] {
-            width: 120px;
-            padding: 3px 6px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-        .event-form input[type="button"] {
-            width: 40px;
-            padding: 3px 0;
-            background: #f7dc8d;
-            color: #000;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-    </style>
 </head>
 <body>
 
@@ -45,9 +19,10 @@
         <p>この先はWebイベントの合言葉が必要です。</p>
         <p style="margin-bottom: 1em; color: #a0a0a0; font-size: 90%;">合言葉はイベント告知ページをご確認ください。</p>
         
-        <div class="event-form">
-            <input type="password" id="passInput" placeholder="合言葉">
-            <input type="button" value="→" onclick="checkPassword()">
+        <!-- style.cssの干渉をすべて無視して強制的に小さくする設定 -->
+        <div style="text-align: center;">
+            <input type="password" id="passInput" placeholder="合言葉" style="width: 120px !important; height: auto !important; font-size: 14px !important; padding: 4px 6px !important; display: inline-block !important; box-sizing: border-box !important;">
+            <input type="button" value="→" onclick="checkPassword()" style="width: 40px !important; height: auto !important; font-size: 14px !important; padding: 4px 0 !important; background: #f7dc8d !important; color: #000 !important; border: none !important; cursor: pointer !important; display: inline-block !important; box-sizing: border-box !important;">
         </div>
         
         <p id="errorMsg" style="color: #ff0000; display: none; margin-top: 1em;">合言葉が違います</p>
