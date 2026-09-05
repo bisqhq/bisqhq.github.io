@@ -1,43 +1,46 @@
-// ページが読み込まれたときの処理
 document.addEventListener('DOMContentLoaded', () => {
-    // 保存されている名前があれば入力欄にセットする
-    const savedName = localStorage.getItem('dream_name');
-    const nameInput = document.getElementById('nameInput');
-    if (savedName && nameInput) {
-        nameInput.value = savedName;
+    // 保存されている苗字・名前を入力欄にセット
+    const savedSei = localStorage.getItem('dream_sei');
+    const savedMei = localStorage.getItem('dream_mei');
+    
+    if (savedSei && document.getElementById('seiInput')) {
+        document.getElementById('seiInput').value = savedSei;
+    }
+    if (savedMei && document.getElementById('meiInput')) {
+        document.getElementById('meiInput').value = savedMei;
     }
 
-    // 小説ページの場合、名前変換を実行して表示する
-    const novelContent = document.getElementById('novelContent');
-    if (novelContent) {
+    if (document.getElementById('novelContent')) {
         updateNovelText();
     }
 });
 
-// 名前の保存ボタンが押されたとき
 function saveName() {
-    const nameInput = document.getElementById('nameInput');
-    const name = nameInput.value.trim() || '名無し'; // 未入力なら「名無し」
-    localStorage.setItem('dream_name', name);
-    alert('名前を「' + name + '」に設定しました！');
+    const seiInput = document.getElementById('seiInput');
+    const meiInput = document.getElementById('meiInput');
     
-    // 小説ページにいる場合は即時反映
+    const sei = seiInput.value.trim() || '山田';
+    const mei = meiInput.value.trim() || '花子';
+    
+    localStorage.setItem('dream_sei', sei);
+    localStorage.setItem('dream_mei', mei);
+    
+    alert('名前を「' + sei + ' ' + mei + '」に設定しました！');
+    
     if (document.getElementById('novelContent')) {
         updateNovelText();
     }
 }
 
-// 本文中の 〇〇 を変換する関数
 function updateNovelText() {
-    const name = localStorage.getItem('dream_name') || '名無し';
+    const sei = localStorage.getItem('dream_sei') || '山田';
+    const mei = localStorage.getItem('dream_mei') || '花子';
     const novelContent = document.getElementById('novelContent');
     
-    // 元のテキスト（HTMLから取得、またはJS内に持たせる）
-    // ここではサンプルとして直接書き換えています
     let rawText = novelContent.getAttribute('data-text');
     
-    // 記事内の「[名前]」という文字をすべて変換
-    let convertedText = rawText.replaceAll('[名前]', name);
+    // [苗字] と [名前] をそれぞれ置き換える
+    let convertedText = rawText.replaceAll('[苗字]', sei).replaceAll('[名前]', mei);
     
     novelContent.textContent = convertedText;
 }
