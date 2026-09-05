@@ -14,15 +14,15 @@
 <div class="text">    
     <h2>Webイベント公開ページ</h2>
 
-  <!-- ▼ 【ステップ1】パスワード入力エリア -->
+<!-- ▼ 【ステップ1】パスワード入力エリア -->
     <div id="lockArea" class="center" style="margin-top: 3em;">
         <p>この先はWebイベントの合言葉が必要です。</p>
         <p style="margin-bottom: 1em; color: #a0a0a0; font-size: 90%;">合言葉はイベント告知ページをご確認ください。</p>
         
         <div class="name-form">
-            <!-- 枠の大きさをstyleで直接ガッツリ指定する -->
-            <input type="password" id="passInput" placeholder="合言葉" style="width: 120px; padding: 0.2em 0.5s; font-size: 13px; background-color: #fff; border: thin solid #bcb8fc; border-radius: 0;">
-            <input type="button" value="→" onclick="checkPassword()" style="cursor: pointer; height: 26px; width: 40px; background: #f7dc8d; color: #000; border: none; font-size: 13px;">
+            <!-- 単位のミスを修正し、高さを名前欄と合わせました -->
+            <input type="password" id="passInput" placeholder="合言葉" style="width: 120px; padding: 0.2em 0.5em; font-size: 14px; background-color: #fff; border: 1px solid #ccc; border-radius: 0; box-sizing: border-box;">
+            <input type="button" value="→" onclick="checkPassword()" style="cursor: pointer; width: 40px; background: #f7dc8d; color: #000; border: none; font-size: 14px; box-sizing: border-box;">
         </div>
         
         <p id="errorMsg" style="color: #ff0000; display: none; margin-top: 1em;">合言葉が違います</p>
