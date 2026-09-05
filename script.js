@@ -32,15 +32,26 @@ function saveName() {
     }
 }
 
+// ▼ ここを新しいものに差し替え！
+let originalNovelHtml = null;
+
 function updateNovelText() {
     const sei = localStorage.getItem('dream_sei') || '山田';
     const mei = localStorage.getItem('dream_mei') || '花子';
     const novelContent = document.getElementById('novelContent');
     
-    let rawText = novelContent.getAttribute('data-text');
+    if (!novelContent) return;
     
-    // [苗字] と [名前] をそれぞれ置き換える
-    let convertedText = rawText.replaceAll('[苗字]', sei).replaceAll('[名前]', mei);
+    // 初回だけ、タグの中身（ルビや改行を含むHTML）を記憶する
+    if (originalNovelHtml === null) {
+        originalNovelHtml = novelContent.innerHTML;
+    }
     
-    novelContent.textContent = convertedText;
+    // 記憶しておいたオリジナルに対して、[苗字] と [名前] を置き換える
+    let convertedText = originalNovelHtml
+        .replaceAll('[苗字]', sei)
+        .replaceAll('[名前]', mei);
+    
+    // innerHTML を使って、<ruby> などのタグや改行を有効にする
+    novelContent.innerHTML = convertedText;
 }
