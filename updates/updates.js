@@ -21,7 +21,7 @@ const blogPosts = [
 // 2. ページ送りや描画の仕組み
 // ==========================================
 let currentPage = 1;
-const itemsPerPage = 5; // 1ページに表示する記事の数（ここで何件ごとに分けるか設定できます）
+const itemsPerPage = 10; // 1ページに表示する記事の数（ここで何件ごとに分けるか設定できます）
 
 document.addEventListener('DOMContentLoaded', () => {
     renderUpdates();
