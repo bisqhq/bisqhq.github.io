@@ -4,11 +4,13 @@
 const blogPosts = [
     {
         date: "2026.06.06",
-        text: "新しいお話を追加しました！（<a href='../novel/novel37.html'>黒尾に告白される話</a>）<br>名前変換機能も無事に実装完了です。"
+        text: "新しいお話を追加しました！（<a href='../novel/novel37.html'>黒尾に告白される話</a>）<br>名前変換機能も無事に実装完了です。
+            "
     },
     {
         date: "2026.06.01",
-        text: "サイトをオープンしました。これから小説や日常の雑記をまとめていきます。よろしくお願いします。"
+        text: "サイトをオープンしました。これから小説や日常の雑記をまとめていきます。よろしくお願いします。
+            "
     },
     // ※3件目以降はここにカンマで追加していく
     // { date: "2026.05.25", text: "本文をここに書く..." }
@@ -60,7 +62,7 @@ function renderUpdates() {
         paginationHtml += `<span style="color: #ccc;">&lt;&lt; next</span>`;
     }
 
-    paginationHtml += ` | ${currentPage} / ${totalPages} ページ | `;
+    paginationHtml += ` | ${currentPage} / ${totalPages} | `;
 
     // 「古い記事へ」リンク
     if (endIndex < blogPosts.length) {
