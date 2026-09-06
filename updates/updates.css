@@ -1,0 +1,271 @@
+/* フォントの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* 全体設定 */
+*{
+font-family: 'Noto Sans JP', sans-serif;
+color: #262626;
+font-size: 12px;
+font-weight: 400;
+letter-spacing: 0.05em;
+line-height: 2.0em;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+list-style-type: none;
+text-decoration:none;
+}
+
+body{
+width: 100vw;
+background-color: #FFF;/* ★全体の背景色 */
+overflow-x: hidden;
+}
+
+.wrap{
+max-width: 700px;
+min-height: 100vh;
+position: relative;
+padding: 40px 25px 0;
+overflow: hidden;
+margin: 50px auto 30px;
+}
+
+/* リンク文字 */
+a{
+transition: 0.1s;
+background-color: #EFEBDE;/* ★リンク文字の背景色 */
+padding: 0 3px 2px;
+}
+
+a:hover{
+background-color: transparent;
+}
+
+/* 強調文 */
+strong{
+font-weight: 700;
+border-bottom: 2px solid #D9CFAD;/* ★強調文の下線の色 */
+}
+
+/* ヘッダーメニュー */
+header{
+width: 100%;
+padding: 20px;
+text-align: center;
+background: repeating-linear-gradient(135deg, #D9CFAD, #D9CFAD 1px, #fff 1px, #fff 10px);/* ★ストライプの色 */
+}
+
+.nav{
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+.nav li a{
+font-family: 'Unica One', sans-serif;
+font-size: 15px;
+padding: 8px 16px;
+background-color: #FFF;
+transition: 0.1s;
+}
+
+.nav li a:hover{
+background-color: #D9CFAD;/* ★メニューをホバー時の背景色 */
+}
+
+/* サイトタイトル */
+.h1{
+display: table;
+width: 100%;
+}
+
+h1{
+font-family: 'Unica One', sans-serif;
+font-size: 30px;
+letter-spacing: 0.25em;
+line-height: 1.6em;
+display: table-cell;
+vertical-align: middle;
+height: 200px;
+}
+
+/* 見出し */
+h2,h3,h4{
+font-family: 'Unica One', 'Noto Sans JP', sans-serif;
+}
+
+h2{
+font-size: 18px;
+position: relative;
+padding-bottom: 10px;
+}
+
+h2:after{
+position: absolute;
+content: "";
+top: 30%;
+width: 100%;
+height: 7px;
+background: repeating-linear-gradient(135deg, #D9CFAD, #D9CFAD 1px, #fff 1px, #fff 6px);/* ★見出し横のストライプの色 */
+}
+
+h3{
+font-size: 15px;
+}
+
+/* メインコンテンツ */
+main{
+width: 100%;
+margin: 50px auto 30px;
+}
+
+/* 更新履歴 */
+.up{
+width: fit-content;
+max-width: 100%;
+margin: 0 auto;
+padding: 10px 30px;
+background-color: #F5F5F5;
+margin-bottom: 50px;
+}
+
+.up span{
+display: inline-block;
+width: 60px;
+font-family: 'Unica One', 'Noto Sans JP', sans-serif;
+}
+
+.up a{
+background: none;
+color: #9F9F9F;
+}
+
+.up a:hover{
+background-color: #FFF;
+color: #D9CFAD;/* ★更新履歴のリンクをホバーした時の文字色 */
+}
+
+/* セクション（見出し＋本文のセット） */
+.section{
+width: 100%;
+margin: 0 auto 60px;
+overflow: hidden;
+}
+
+
+/* 入力フォームと送信ボタン */
+input[type="text"],input[type="radio"],input[type="button"],input[type="reset"],input[type="submit"],select,textarea{
+-webkit-appearance: none;
+-moz-appearance: none;
+-webkit-box-shadow: none;
+appearance: none;
+box-shadow: none;
+background: #EFEBDE;/* ★入力フォームの背景色 */
+padding: 0 6px;
+border-radius: 0;
+color: #262626;
+border: none;
+width: 20em;
+height: 8.0em;
+}
+
+input:focus, textarea:focus{
+border: 1px solid #262626;
+outline: none;
+height: 8.0em;
+}
+
+input[type="submit"]{
+width: auto;
+height: 2.2em;
+background-color: #262626;
+color: #FFF;
+padding: 0 15px;
+cursor: pointer;
+transition: 0.2s;
+font-family: 'Unica One', 'Noto Sans JP', sans-serif;
+}
+
+input[type="submit"]:hover{
+background-color: #D9CFAD;/* ★送信ボタンをホバーしたときの色 */
+}
+
+/* ブログ（memo） */
+.memo{
+width: 100%;
+height: auto;
+margin-bottom: 60px;
+background: repeating-linear-gradient(135deg, #D9CFAD, #D9CFAD 1px, #fff 1px, #fff 6px);/* ★memoのストライプの色 */
+}
+
+.memo-inner{
+width: calc(100% - 40px);
+margin: 20px auto;
+padding: 0 20px;
+background-color: #FFF;
+}
+
+.memo-top{
+font-family: 'Unica One', sans-serif;
+font-size: 20px;
+text-align: center;
+padding-bottom: 20px;
+}
+
+.memo p{
+color: #262626;
+font-size: 11px;
+}
+
+.memo .title{
+font-size: 15px;
+padding-bottom: 15px;
+}
+
+.date{
+font-family: 'Unica One', sans-serif;
+}
+
+.readmore a{
+font-family: 'Unica One', sans-serif;
+}
+
+.memo-line{
+width: 100%;
+height: 1px;
+background-color: #D9CFAD;/* ★memoの本文と追記を分ける線の色 */
+}
+
+.page{
+font-family: 'Unica One', sans-serif;
+text-align: center;
+padding-top: 70px;
+}
+
+.page a{
+font-family: 'Unica One', sans-serif;
+padding: 0 10px;
+}
+
+/* フッター */
+footer{
+text-align: center;
+margin-top: 140px;
+font-size: 11px;
+}
+
+/* 500px以下のデバイスでの見え方 */
+@media screen and (max-width: 500px) {
+.wrap{
+margin-top: 0;
+padding-top: 25px;
+}
+
+main{
+margin-top: 55px;
+}
+
+}
