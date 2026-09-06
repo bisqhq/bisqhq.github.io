@@ -91,9 +91,11 @@ border-left: 1px solid rgba(21,68,131,0.2);/* ★h2見出しの左側の線の�
 margin-bottom: 20px;
 }
 
+/* ▼【調整】タイトルと本文の間隔を狭くしました */
 h3{
 font-size: 18px;
 text-align: center;
+margin-bottom: 15px;
 }
 
 /* メインコンテンツ */
@@ -170,9 +172,11 @@ line-height: normal;
 margin-top: 0;
 }
 
+/* ▼【調整】本文の上下の余白をスッキリさせ、行頭の全角スペースを確実に反映させます */
 .text{
-margin: 70px 0;
+margin: 20px 0;
 white-space: pre-line;
+text-indent: 0; /* 全角スペースをそのまま活かす設定 */
 }
 
 .page{
@@ -237,7 +241,7 @@ line-height: normal;
 }
 
 .text{
-margin-top: 30px;
+margin-top: 20px;
 }
 }
 
