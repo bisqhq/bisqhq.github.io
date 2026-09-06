@@ -19,8 +19,8 @@ function saveName() {
     const seiInput = document.getElementById('seiInput');
     const meiInput = document.getElementById('meiInput');
     
-    const sei = seiInput.value.trim() || '山田';
-    const mei = meiInput.value.trim() || '花子';
+    const sei = seiInput.value.trim() || 'ミョウジ';
+    const mei = meiInput.value.trim() || 'ナマエ';
     
     localStorage.setItem('dream_sei', sei);
     localStorage.setItem('dream_mei', mei);
@@ -36,8 +36,8 @@ function saveName() {
 let originalNovelHtml = null;
 
 function updateNovelText() {
-    const sei = localStorage.getItem('dream_sei') || '山田';
-    const mei = localStorage.getItem('dream_mei') || '花子';
+    const sei = localStorage.getItem('dream_sei') || 'ミョウジ';
+    const mei = localStorage.getItem('dream_mei') || 'ナマエ';
     const novelContent = document.getElementById('novelContent');
     
     if (!novelContent) return;
