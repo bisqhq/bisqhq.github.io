@@ -156,7 +156,7 @@ h3 {
     text-align: center;
     letter-spacing: 2px;
     margin: 60px auto 20px;
-    font-size: 12px; /* ←この1行を追加！（数字はお好みで調整してください） */
+    font-size: 11px; /* ←この1行を追加！（数字はお好みで調整してください） */
 }
 
 h3 span {
