@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Shippori+Mincho+B1:wght@400;500&display=swap');
 
+html {
+    overflow-y: scroll; /* 短いページでも常にスクロールバーの領域を確保する */
+}
+
 body {
     background: #fff;
     color: #333;
