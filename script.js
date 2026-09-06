@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 保存されている苗字・名前を入力欄にセット
+    // works.htmlを開いたとき：保存されている名前を入力欄にセット
     const savedSei = localStorage.getItem('dream_sei');
     const savedMei = localStorage.getItem('dream_mei');
     
@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('meiInput').value = savedMei;
     }
 
-    // 小説本文のページであれば自動で変換を実行
+    // 小説ページを開いたとき：自動で本文の文字を変換する
     if (document.getElementById('novelContent')) {
         updateNovelText();
     }
 });
 
+// works.htmlで「変換」ボタンを押したときの処理
 function saveName() {
     const seiInput = document.getElementById('seiInput');
     const meiInput = document.getElementById('meiInput');
@@ -25,24 +26,18 @@ function saveName() {
     const sei = seiInput.value.trim() || 'ミョウジ';
     const mei = meiInput.value.trim() || 'ナマエ';
     
-    // ローカルストレージに保存
+    // ブラウザに名前を記憶させる
     localStorage.setItem('dream_sei', sei);
     localStorage.setItem('dream_mei', mei);
     
-    // ②③ 変換ボタンを押したときの「手ごたえ」と「メッセージ表示」
+    // フォームの下に「○○に変換しました」を表示する
     const messageArea = document.getElementById('saveMessage');
     if (messageArea) {
-        messageArea.textContent = `「${sei} ${mei}」に変換しました！`;
-    }
-
-    // アラートは邪魔になることが多いので削除し、代わりに画面内のテキストで分かりやすくする
-
-    // 小説ページにいる場合は、即座に本文を書き換える
-    if (document.getElementById('novelContent')) {
-        updateNovelText();
+        messageArea.textContent = `「${sei} ${mei}」に設定しました！`;
     }
 }
 
+// 小説本文の文字を置き換える関数
 let originalNovelHtml = null;
 
 function updateNovelText() {
@@ -52,17 +47,15 @@ function updateNovelText() {
     
     if (!novelContent) return;
     
-    // 初回だけ、タグの中身（ルビや改行を含むHTML）を記憶する
+    // 初回だけ、ルビや改行を含む元のHTMLを記憶する
     if (originalNovelHtml === null) {
         originalNovelHtml = novelContent.innerHTML;
     }
     
-    // 記憶しておいたオリジナルに対して、[苗字] と [名前] を置き換える
-    // ※ 注意: 実際の小説本文側の表記が 「[苗字]」「[名前]」 になっているか確認してください
+    // [苗字] と [名前] を保存された名前に置き換える
     let convertedText = originalNovelHtml
         .replaceAll('[苗字]', sei)
         .replaceAll('[名前]', mei);
     
-    // innerHTML を使って反映
     novelContent.innerHTML = convertedText;
 }
