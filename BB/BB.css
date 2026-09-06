@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Rouge+Script|Bellefair:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.clearfix::after { 
+    visibility: hidden;
+    display: block;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+body {
+    font-size: 13px;
+    font-family: 'Bellefair',"游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ 明朝", serif;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+header {
+    text-align: center;
+}
+
+strong {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid #efefef;
+    padding: 0 3px;
+    margin: 0 5px;
+    color: #A6C1DE;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.head {
+    display: block;
+    margin: 30px auto 0;
+    width: 80%;
+    max-width: 700px;
+    height: 200px;
+    object-fit: cover;
+    z-index: -10;
+}
+
+.h_2 {
+    height: 100px;
+}
+
+h1 {
+    width: 95%;
+    position: relative;
+    margin-top: -180px;
+    font-family: 'Rouge Script', cursive;
+    font-size: 70px;
+    color: #333;
+    transform: rotate(-15deg);
+    text-shadow: 0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff,
+            0 0 40px #fff;
+}
+
+h1 span {
+    display: block;
+    font-family: 'Bellefair', serif;
+    font-size: 18px;
+    margin-top: -20px;
+}
+
+article {
+    width: 80%;
+    max-width: 700px;
+    margin: 100px auto 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+main dl dt {
+    float: left;
+    margin-right: 30px;
+}
+
+main dl dd {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+main dl dd p {
+    font-size: 12px;
+}
+
+main dl dd h2 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+main dl dd p.more {
+    text-align: right;
+    margin-top: 10px;
+}
+
+main dl dd p.more a {
+    border: none;
+    background: #88B0D4;
+    color: #fff;
+    padding: 5px;
+}
+
+@media screen and (max-width: 769px){
+    main dl dt {
+        float: none;
+        border-top: 1px solid #efefef;
+        padding-top: 30px;
+    }
+    
+    main dl dt:first-child {
+        border: none;
+    }
+    
+    main dl dt,
+    main dl dd {
+        overflow: visible;
+        width: 100%;
+    }
+    
+    main dl dd {
+        margin-bottom: 20px;
+    }
+    
+    main dl dd .more {
+        margin-top: 18px;
+    }
+}
+
+h3 {
+    max-width: 200px;
+    position: relative;
+    padding: 10px 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 60px auto 20px;
+}
+
+h3 span {
+    font-weight: bold;
+}
+
+h3::before,
+h3::after,
+h3>span::before,
+h3>span::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 50%;
+    background-color: #555;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h3::before {
+    top: 0;
+    left: 15px;
+    margin-top: 1px;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+
+h3::after {
+    bottom: 0;
+    left: 15px;
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+
+h3>span::before {
+    top: 0;
+    right: 15px;
+    margin-top: 1px;
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+
+h3>span::after {
+    bottom: 0;
+    right: 15px;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+
+h4 {
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    background: #5F77A3;
+    margin: 30px 0 8px;
+}
+
+.wrapper .head {
+    height: 80px;
+}
+
+.wrapper h1 {
+    margin-top: -120px;
+}
+
+.wrapper article {
+    margin-top: 50px;
+}
+
+.wrapper h3 {
+    margin: 60px auto;
+}
+
+.kenten {
+    text-emphasis: filled sesame;
+    -webkit-text-emphasis: filled sesame;
+}
+
+rt {
+    font-size: 60%;
+}
