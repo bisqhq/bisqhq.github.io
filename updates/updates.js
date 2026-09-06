@@ -55,18 +55,18 @@ function renderUpdates() {
     
     // 「新しい記事へ」リンク
     if (currentPage > 1) {
-        paginationHtml += `<a href="#" onclick="changePage(-1); return false;">&lt;&lt; 新しい記事</a>`;
+        paginationHtml += `<a href="#" onclick="changePage(-1); return false;">&lt;&lt; next</a>`;
     } else {
-        paginationHtml += `<span style="color: #ccc;">&lt;&lt; 新しい記事</span>`;
+        paginationHtml += `<span style="color: #ccc;">&lt;&lt; next</span>`;
     }
 
     paginationHtml += ` | ${currentPage} / ${totalPages} ページ | `;
 
     // 「古い記事へ」リンク
     if (endIndex < blogPosts.length) {
-        paginationHtml += `<a href="#" onclick="changePage(1); return false;">古い記事 &gt;&gt;</a>`;
+        paginationHtml += `<a href="#" onclick="changePage(1); return false;">prev &gt;&gt;</a>`;
     } else {
-        paginationHtml += `<span style="color: #ccc;">古い記事 &gt;&gt;</span>`;
+        paginationHtml += `<span style="color: #ccc;">prev &gt;&gt;</span>`;
     }
 
     // main要素の中身を更新
