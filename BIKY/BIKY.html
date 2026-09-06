@@ -17,10 +17,12 @@
 <p>無個性の私にできること。進む先に迷っている時に再会したのは、幼い頃に好きだった爆豪勝己。<br>
 続いていく会話の先で、置いてきたはずの感情と、まだ見えない未来が少しずつ輪郭を持ちはじめる。 </p>
 <br>
-<form class="dream" action="/bisqhq/novel/3/dream" method="post" method="post">
-<input type="text" name="DreamID[1]" value="#苗字#">
-<input type="text" name="DreamID[2]" value="#名前#">
-<input type="submit" name="set" value="◎"></form>
+<div class="dream">
+    <input type="text" id="seiInput" value="苗字">
+    <input type="text" id="meiInput" value="名前">
+    <input type="button" value="◎" onclick="saveName()">
+</div>
+<div id="saveMessage" style="margin-top: 5px; font-size: 0.7rem; color: #043E8B;"></div>
     
 <main>
 <div class="chapter"><h2>01</h2>
