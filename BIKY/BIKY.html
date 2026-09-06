@@ -20,7 +20,8 @@
 <div class="dream">
     <input type="text" id="seiInput" value="苗字">
     <input type="text" id="meiInput" value="名前">
-    <input type="button" value="◎" onclick="saveName()">
+    <!-- ↓ここを type="submit" に戻して onclick を追加する -->
+    <input type="submit" value="◎" onclick="saveName(); return false;">
 </div>
 <div id="saveMessage" style="margin-top: 5px; font-size: 0.7rem; color: #043E8B;"></div>
     
@@ -37,5 +38,6 @@ Template by mellow.
 </footer>
 
 </div>
+<script src="../script.js"></script>
 </body>
 </html>
