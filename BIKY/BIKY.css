@@ -172,6 +172,7 @@ margin-top: 0;
 
 .text{
 margin: 70px 0;
+white-space: pre-line;
 }
 
 .page{
