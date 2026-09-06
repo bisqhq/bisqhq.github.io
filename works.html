@@ -27,13 +27,13 @@ Updates : <br>
 
 <div class="text">
 基本変換なしです
-<!-- name-form の部分を以下のように修正 -->
+<!-- 送信フォームではなく、JavaScriptで動かす入力エリアにする -->
 <div class="name-form">
     <input type="text" id="seiInput" value="苗字" style="width: 80px;"> 
     <input type="text" id="meiInput" value="名前" style="width: 80px;"> 
-    <!-- ボタン -->
-    <input type="button" value="変換" onclick="saveName()" style="cursor: pointer; height: auto; padding: 2px 10px; background: #f7dc8d; color: #000; border: 1px solid #ccc; border-radius: 3px;">
-    <!-- ③ 変換完了メッセージを表示する場所 -->
+    <!-- ② 押したことがわかるように active 疑似クラスやクリック時の見た目を考慮したボタン -->
+    <input type="button" value="変換" onclick="saveName()" style="cursor: pointer; background: #f7dc8d; color: #000; border: 1px solid #ccc; padding: 2px 8px;">
+    <!-- ③ メッセージ表示エリア -->
     <div id="saveMessage" style="margin-top: 5px; font-size: 0.85rem; color: #555;"></div>
 </div><br>
 <hr>
