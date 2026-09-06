@@ -174,3 +174,12 @@ input[type=submit]{
     background: #f7dc8d;
     font-weight: 200;
 }
+
+/* worksのテキストやコンテナがはみ出て広がるのを防ぐ */
+.wrp .text, 
+.wrp .info, 
+.wrp .main {
+    box-sizing: border-box;
+    max-width: 100%;
+    word-break: break-all;
+}
