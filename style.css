@@ -175,15 +175,6 @@ input[type=submit]{
     font-weight: 200;
 }
 
-/* worksのテキストやコンテナがはみ出て広がるのを防ぐ */
-.wrp .text, 
-.wrp .info, 
-.wrp .main {
-    box-sizing: border-box;
-    max-width: 100%;
-    word-break: break-all;
-}
-
 /* すべての要素の幅と余白の計算をきれいに統一する */
 *, *::before, *::after {
     box-sizing: border-box;
