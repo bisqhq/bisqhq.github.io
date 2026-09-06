@@ -183,3 +183,25 @@ input[type=submit]{
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
+/* --- スクロールバーのカスタマイズ --- */
+
+/* 1. Chrome, Safari, Edge用 */
+::-webkit-scrollbar {
+    width: 8px; /* スクロールバーの太さ */
+}
+
+::-webkit-scrollbar-track {
+    background: #fff; /* スクロールバーの背景色 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f7dc8d; /* つまみの色（サイトのアクセントカラーに合わせました） */
+    border-radius: 4px; /* 角を丸くする */
+}
+
+/* 2. Firefox用 */
+html {
+    scrollbar-color: #f7dc8d #fff; /* つまみの色  背景色 */
+    scrollbar-width: thin; /* 細めにする */
+}
