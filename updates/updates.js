@@ -4,15 +4,15 @@
 const blogPosts = [
     {
         date: "2026.06.06",
-        title: "新しいお話を追加しました",
+        
         text: "黒尾に告白される話をアップしました！名前変換機能も無事に実装完了です。",
-        readmore: "<a href='../novel/novel37.html'>続きを読む ≫</a>"
+        
     },
     {
         date: "2026.06.01",
-        title: "サイトオープンのお知らせ",
+   
         text: "個人サイトを公開しました。これから小説や日常の雑記をまとめていきます。よろしくお願いします。",
-        readmore: "" // 続きを読むが不要な場合は空欄にできます
+ 
     },
     // ※3件目以降はここにカンマで追加していく
 ];
@@ -63,18 +63,18 @@ function renderUpdates() {
     
     // 「前のページへ」リンク
     if (currentPage > 1) {
-        paginationHtml += `<a href="#" onclick="changePage(-1); return false;">&lt;&lt; 新しい記事</a>`;
+        paginationHtml += `<a href="#" onclick="changePage(-1); return false;">&lt;&lt; next</a>`;
     } else {
-        paginationHtml += `<span style="color: #ccc;">&lt;&lt; 新しい記事</span>`;
+        paginationHtml += `<span style="color: #ccc;">&lt;&lt; next</span>`;
     }
 
     paginationHtml += ` | ${currentPage} / ${totalPages} ページ | `;
 
     // 「次のページへ」リンク
     if (endIndex < blogPosts.length) {
-        paginationHtml += `<a href="#" onclick="changePage(1); return false;">古い記事 &gt;&gt;</a>`;
+        paginationHtml += `<a href="#" onclick="changePage(1); return false;">prev &gt;&gt;</a>`;
     } else {
-        paginationHtml += `<span style="color: #ccc;">古い記事 &gt;&gt;</span>`;
+        paginationHtml += `<span style="color: #ccc;">prev &gt;&gt;</span>`;
     }
 
     // main要素の中身を、記事＋ページ送りに丸ごと置き換える
