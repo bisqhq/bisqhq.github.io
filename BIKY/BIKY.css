@@ -172,11 +172,10 @@ line-height: normal;
 margin-top: 0;
 }
 
-/* ▼【調整】本文の上下の余白をスッキリさせ、行頭の全角スペースを確実に反映させます */
 .text{
 margin: 20px 0;
 white-space: pre-line;
-text-indent: 0; /* 全角スペースをそのまま活かす設定 */
+text-indent: 1em; /* ←ここを追加！全角1文字分のインデント（字下げ）を強制します */
 }
 
 .page{
