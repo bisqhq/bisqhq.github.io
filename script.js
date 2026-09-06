@@ -19,20 +19,28 @@ function saveName() {
     const seiInput = document.getElementById('seiInput');
     const meiInput = document.getElementById('meiInput');
     
+    // 入力欄が存在しないページ（個別小説ページなど）への対策
+    if (!seiInput || !meiInput) return;
+
     const sei = seiInput.value.trim() || 'ミョウジ';
     const mei = meiInput.value.trim() || 'ナマエ';
     
     localStorage.setItem('dream_sei', sei);
     localStorage.setItem('dream_mei', mei);
     
-    alert('名前を「' + sei + ' ' + mei + '」に設定しました！');
-    
+    // ③ フォーム下に「○○に変換しました」を表示する処理
+    const messageArea = document.getElementById('saveMessage');
+    if (messageArea) {
+        messageArea.textContent = `名前を「${sei} ${mei}」に設定しました！`;
+        // 数秒後にメッセージを消したい場合はここにタイマーを入れることも可能
+    }
+
+    // 小説ページにいる場合はリアルタイムで本文を更新
     if (document.getElementById('novelContent')) {
         updateNovelText();
     }
 }
 
-// ▼ ここを新しいものに差し替え！
 let originalNovelHtml = null;
 
 function updateNovelText() {
