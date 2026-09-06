@@ -1,0 +1,301 @@
+/* フォントの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
+
+/* 全体設定 */
+*{
+font-family: 'Shippori Mincho', serif;
+color: #FFF;/* ★全体の文字色 */
+font-size: 12px;
+font-weight: 400;
+letter-spacing: 0.05em;
+line-height: 2.0em;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+list-style-type: none;
+text-decoration:none;
+}
+
+body{
+width: 100vw;
+overflow-x: hidden;
+}
+
+/* 全体の背景 */
+body:before{
+background-image: linear-gradient(140deg, rgba(75, 137, 165, 1), rgba(66, 117, 180, 1) 46%, rgba(98, 148, 189, 1) 78%, rgba(156, 202, 205, 1));/* ★背景のグラデーション色 */
+background-size: cover;
+content: "";
+display: block;
+position: fixed;
+top: 0;
+left: 0;
+z-index: -99;
+width: 100%;
+height: 100vh;
+}
+
+.wrap{
+max-width: 600px;
+min-height: 100vh;
+padding: 40px 25px 0;
+margin: 50px auto 30px;
+}
+
+/* リンク文字 */
+a{
+transition: 0.2s;
+background-color: rgba(0,0,0,0.4);/* ★リンク文字の背景色 */
+}
+
+a:hover{
+background-color: #FFF;/* ★リンク文字をホバーした時の背景色 */
+color: #02447C;/* ★リンク文字をホバーした時の文字色 */
+}
+
+/* 強調文 */
+strong{
+font-weight: 700;
+border-bottom: 1px solid #FFF;/* ★強調文の下線の色 */
+}
+
+/* ヘッダーメニュー */
+header{
+width: 100%;
+text-align: center
+}
+
+.nav{
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 15px;
+}
+
+.nav li a{
+font-size: 14px;
+background-color: transparent;
+}
+
+.nav li a:hover{
+background-color: transparent;
+color: #02447C;/* ★ヘッダーメニューをホバーした時の文字色 */
+}
+
+/* 子ページ */
+.child-wrap{
+padding-top: 0;
+margin-top: 40px;
+}
+
+.child-nav{
+width: 100%;
+border: 1px solid #FFF;/* ★子ページのメニューを囲む線の色 */
+padding: 5px 0;
+gap: 10%;
+}
+
+/* サイトタイトル */
+.ttl{
+width: 100%;
+height: 75px;
+position: relative;
+margin-bottom: 10px;
+}
+
+.square{
+width: 200px;
+height: 75px;
+border: 1px solid #FFF;/* ★TOPページタイトルの四角い枠線の色 */
+background-color: transparent;
+margin: 0 auto;
+}
+
+h1{
+font-family: 'Oooh Baby', sans-serif;
+white-space: nowrap;
+font-size: 40px;/* ★TOPページタイトルの文字サイズ（英語） */
+letter-spacing: 0;
+position: absolute;
+top: -30%;
+left: 49%;
+transform: translate(-50%, 0)　rotate(-10deg);
+-webkit-transform: translate(-50%, 0) rotate(-10deg);
+-ms-transform: translate(-50%, 0)　rotate(-10deg);
+}
+
+.ja{
+font-size: 11px;/* ★TOPページタイトルの文字サイズ（日本語） */
+display: block;
+position: absolute;
+top: 50px;
+left: 50%;
+transform: translate(-50%, 0);
+-webkit-transform: translate(-50%, 0);
+-ms-transform: translate(-50%, 0);
+}
+
+/* 更新履歴 */
+.update{
+width: fit-content;
+max-width: 100%;
+background-color: rgba(0,0,0,0.15);/* ★更新履歴の背景色 */
+padding: 10px 30px;
+margin: 40px auto 50px;
+}
+
+/* 見出し */
+h2{
+font-size: 18px;
+text-align: center;
+position: relative;
+margin-bottom: 40px;
+font-weight: 600;
+}
+
+h2:after{
+content: '';
+width: 15px;
+height: 1px;
+background-color: #FFF;/* ★h2見出しの下線の色 */
+position: absolute;
+top: 50px;
+left: 50%;
+transform: translate(-50%, 0);
+-webkit-transform: translate(-50%, 0);
+-ms-transform: translate(-50%, 0);
+}
+
+h3{
+font-size: 14px;
+font-weight: 600;
+padding-bottom: 20px;
+}
+
+/* メインコンテンツ */
+main{
+width: 100%;
+margin: 50px auto 30px;
+}
+
+/* セクション（見出し＋本文のセット） */
+.section{
+width: 100%;
+margin: 0 auto 60px;
+padding: 0 5%;
+}
+
+/* 入力フォームと送信ボタン */
+input[type="text"],input[type="radio"],input[type="button"],input[type="reset"],input[type="submit"],select,textarea{
+-webkit-appearance: none;
+-moz-appearance: none;
+-webkit-box-shadow: none;
+appearance: none;
+box-shadow: none;
+background: rgba(0,0,0,0.2);/* ★入力フォームの背景色 */
+padding: 3px 6px;
+border-radius: 0;
+color: #FFF;/* ★入力フォームの文字色 */
+border: none;
+width: 34em;
+height: 8.0em;
+margin-top: 10px;
+}
+
+input:focus, textarea:focus{
+outline: none;
+height: 8.0em;
+background: rgba(0,0,0,0.4);/* ★入力フォームをフォーカスした時の文字色 */
+}
+
+input[type="submit"]{
+width: auto;
+height: 2.2em;
+background-color: #FFF;/* ★送信ボタンの背景色 */
+color:#02447C;/* ★送信ボタンの文字色 */
+padding: 0 15px;
+cursor: pointer;
+transition: 0.2s;
+}
+
+input[type="submit"]:hover{
+background-color: #02447C;/* ★送信ボタンをホバーした時の背景色 */
+color: #FFF;/* ★送信ボタンをホバーした時の文字色 */
+}
+
+/* 名前変換フォーム */
+.dream{
+width: 100%;
+text-align: center;
+margin-bottom: 50px;
+}
+
+.dream input{
+width: 8em;
+height: 30px;
+margin-right: 10px;
+padding: 2px 5px 1px;
+line-height: normal;
+}
+
+.dream input[type="submit"]{
+width: auto;
+padding: 0px 10px;
+line-height: normal;
+}
+
+/* 小説一覧 */
+.long{
+width: 100%;
+border: 1px solid #FFF;/* ★長編小説の枠線の色 */
+padding: 20px 30px;
+}
+
+.long+.long{
+margin-top: 20px;
+}
+
+/* フッター */
+footer{
+text-align: center;
+margin: 120px auto 60px;
+font-size: 11px;
+}
+
+/* 500px以下のデバイスでの見え方 */
+@media screen and (max-width: 500px) {
+.wrap{
+margin: 20px auto 30px;
+}
+
+.child-wrap{
+margin-top: 20px;
+}
+
+main{
+margin-top: 30px;
+}
+
+.section{
+padding-left: 5%;
+padding-right: 5%;
+}
+
+input[type="text"],input[type="radio"],input[type="button"],input[type="reset"],select,textarea{
+width: 100%;
+margin-bottom: -30px;
+}
+
+input[type="submit"]{
+font-size: 12px;
+}
+
+.dream input{
+width: 8em;
+}
+
+.code{
+margin-bottom: 0;
+}
+}
