@@ -18,7 +18,7 @@ text-decoration:none;
 
 /* 背景 */
 body:before{
-background: url(BIKY_PC) no-repeat center top;/* ★PC表示時の背景画像 */
+background: url(BIKY_PC.png) no-repeat center top;/* ★PC表示時の背景画像 */
 background-size: cover;
 content: "";
 display: block;
@@ -198,7 +198,7 @@ font-size: 11px;
 /* 1000px以下のデバイスでの見え方 */
 @media screen and (max-width: 1000px) {
 body:before{
-background: url(BIKY_TB) no-repeat center top;/* ★タブレット表示時の背景画像 */
+background: url(BIKY_TB.png) no-repeat center top;/* ★タブレット表示時の背景画像 */
 background-size: cover;
 }
 }
@@ -206,7 +206,7 @@ background-size: cover;
 /* 500px以下のデバイスでの見え方 */
 @media screen and (max-width: 500px) {
 body:before{
-background: url(BIKY_PH) no-repeat center top;/* ★スマホ表示時の背景画像 */
+background: url(BIKY_PH.png) no-repeat center top;/* ★スマホ表示時の背景画像 */
 background-size: cover;
 }
 
