@@ -18,6 +18,10 @@ layout: default
 
     <time><span>{{ post.date | date: "%Y.%m.%d" }}</span></time>
 </article>
+{% else %}
+<article>
+    <p>（記事データが届いていません）</p>
+</article>
 {% endfor %}
 
 <div class="menu">
