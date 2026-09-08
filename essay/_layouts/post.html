@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<article>
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.content }}</p>
+    
+    <!-- 追記（more）がある場合のみ表示 -->
+    {% if page.more %}
+    <div class="more-section">
+        <h3>: more</h3>
+        <p>{{ page.more | markdownify }}</p>
+    </div>
+    {% endif %}
+
+    <time><span>{{ page.date | date: "%Y.%m.%d %H:%M" }}</span></time>
+</article>
+
+<div class="menu">
+    <ul>
+        {% if page.previous.url %}
+            <li><a href="{{ page.previous.url }}">前へ</a></li>
+        {% else %}
+            <li>前はありません</li>
+        {% endif %}
+        
+        <li>| <a href="/">INDEX</a> |</li>
+
+        {% if page.next.url %}
+            <li><a href="{{ page.next.url }}">次へ</a></li>
+        {% else %}
+            <li>次はありません</li>
+        {% endif %}
+    </ul>
+</div>
