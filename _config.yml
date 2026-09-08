@@ -4,6 +4,6 @@ permalink: /essay/posts/:year-:month-:day-:title.html
 markdown: kramdown
 timezone: Asia/Tokyo
 paginate: 1
-paginate_path: "/essay/page:num/"
+paginate_path: "/essay/page:num"
 gems:
   - jekyll-paginate
