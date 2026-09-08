@@ -2,18 +2,23 @@
 layout: default
 ---
 
-{% for post in site.posts %}
+{% assign essay_posts = site.posts | where_exp: "item", "item.url contains '/essay/'" %}
+
+{% for post in essay_posts %}
 <article>
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     <p>{{ post.content }}</p>
     <time><span>{{ post.date | date: "%Y.%m.%d" }}</span></time>
+</article>
+
+{% else %}
+<article>
+    <p>記事がまだありません。</p>
 </article>
 {% endfor %}
 
 <div class="menu">
     <ul>
         <li><a href="{{ '/' | relative_url }}">INDEX</a></li>
-        <!-- メインのTOPページに戻るボタンも作りたい場合は以下を追加 -->
-        <!-- <li><a href="../">SITE TOP</a></li> -->
     </ul>
 </div>
