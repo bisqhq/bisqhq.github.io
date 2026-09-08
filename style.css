@@ -210,9 +210,9 @@ html {
 .booth-btn {
     display: inline-block;
     padding: 0.6em 2em;           /* ボタンの内側の余白 */
-    border: 1px solid #fc4d50;     /* 外枠の線（太さと色） */
+    border: 1px solid #f7dc8d;     /* 外枠の線（太さと色） */
     border-radius: 20px;          /* 角丸の丸み具合 */
-    color: #fc4d50;               /* 文字の色（枠線の色と合わせる） */
+    color: #f7dc8d;               /* 文字の色（枠線の色と合わせる） */
     text-decoration: none;        /* 下線を消す */
     font-size: 0.9em;             /* 文字の大きさ */
     letter-spacing: 0.1em;        /* 文字間隔 */
