@@ -20,18 +20,18 @@ layout: default
 
 <div class="menu">
     <ul>
-        {% if paginator.next_page %}
-            <li><a href="{{ paginator.next_page_path | relative_url }}">前へ</a></li>
+        {% if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path | relative_url }}">PREV</a></li>
         {% else %}
-            <li>前はありません</li>
+            <li>PREV</li>
         {% endif %}
         
         <li>| <a href="{{ '/' | relative_url }}">INDEX</a> |</li>
 
-        {% if paginator.previous_page %}
-            <li><a href="{{ paginator.previous_page_path | relative_url }}">次へ</a></li>
+        {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | relative_url }}">NEXT</a></li>
         {% else %}
-            <li>次はありません</li>
+            <li>NEXT</li>
         {% endif %}
     </ul>
 </div>
