@@ -88,17 +88,36 @@
         border-top: thin dotted #000;
     }
 
-    /* 追記（more）エリア */
-    .more-section {
-        margin-top: 2em;
+   /* --- 追記（more）開閉デザイン --- */
+    details.more-section {
+        margin-top: 1.5em;
         padding-top: 1em;
-        border-top: 1px solid #efefef;
+        border-top: 1px solid #efefef; /* 本文と:moreの間の線だけ残します */
+        text-align: justify;
     }
-    .more-section h3 {
+
+    details.more-section summary {
+        cursor: pointer;
+        list-style: none; /* 矢印を消す */
         font-size: 0.9em;
         color: #666;
-        margin-bottom: 0.5em;
-        text-align: justify;
+        outline: none;
+    }
+    
+    details.more-section summary::-webkit-details-marker {
+        display: none; /* Safari等の矢印消し */
+    }
+
+    details.more-section summary:hover {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    /* 追記本文の余白調整（余計な線を一切入れない） */
+    details.more-section div.more-content {
+        margin-top: 0.5em;
+        border: none;
+        padding: 0;
     }
 
     /* メニュー */
