@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<!-- 1. essay/_posts 内の記事だけを抽出 -->
+{% assign essay_posts = site.posts | where_exp: "item", "item.path contains 'essay/_posts'" %}
+
+<!-- 2. URLの ?page=N から現在のページ番号を取得（指定がなければ1ページ目） -->
+{% assign current_page = page.url | split: "page=" | last | plus: 0 %}
+{% if current_page == 0 %}{% assign current_page = 1 %}{% endif %}
+
+<!-- 3. 現在のページに対応する記事を取得 -->
+{% assign post_index = current_page | minus: 1 %}
+{% assign post = essay_posts[post_index] %}
+
+{% if post %}
+<article>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p>{{ post.content }}</p>
+
+    {% if post.more and post.more != "" %}
+    <details class="more-section">
+        <summary>:more</summary>
+        <div class="more-content">
+            {{ post.more | markdownify }}
+        </div>
+    </details>
+    {% endif %}
+
+    <time><span>{{ post.date | date: "%Y.%m.%d" }}</span></time>
+</article>
+{% else %}
+<article>
+    <p>記事がありません。</p>
+</article>
+{% endif %}
+
+<!-- 4. ナビゲーション（PREV / INDEX / NEXT） -->
+{% assign total_posts = essay_posts.size %}
+{% assign prev_page = current_page | minus: 1 %}
+{% assign next_page = current_page | plus: 1 %}
+
+<div class="menu">
+    <ul>
+        <!-- PREV: より新しい記事へ -->
+        {% if current_page > 1 %}
+            {% if prev_page == 1 %}
+                <li><a href="{{ '/essay/' | relative_url }}">PREV</a></li>
+            {% else %}
+                <li><a href="{{ '/essay/?page=' | append: prev_page | relative_url }}">PREV</a></li>
+            {% endif %}
+        {% else %}
+            <li>PREV</li>
+        {% endif %}
+
+        <li>| <a href="{{ '/' | relative_url }}">INDEX</a> |</li>
+
+        <!-- NEXT: より古い記事へ -->
+        {% if current_page < total_posts %}
+            <li><a href="{{ '/essay/?page=' | append: next_page | relative_url }}">NEXT</a></li>
+        {% else %}
+            <li>NEXT</li>
+        {% endif %}
+    </ul>
+</div>
