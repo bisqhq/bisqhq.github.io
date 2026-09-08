@@ -6,7 +6,6 @@ layout: default
     <h2>{{ page.title }}</h2>
     <p>{{ page.content }}</p>
     
-    <!-- 追記（more）がある場合のみ表示 -->
     {% if page.more %}
     <div class="more-section">
         <h3>: more</h3>
@@ -20,15 +19,15 @@ layout: default
 <div class="menu">
     <ul>
         {% if page.previous.url %}
-            <li><a href="{{ page.previous.url }}">前へ</a></li>
+            <li><a href="{{ page.previous.url | relative_url }}">前へ</a></li>
         {% else %}
             <li>前はありません</li>
         {% endif %}
         
-        <li>| <a href="/">INDEX</a> |</li>
+        <li>| <a href="{{ '/' | relative_url }}">INDEX</a> |</li>
 
         {% if page.next.url %}
-            <li><a href="{{ page.next.url }}">次へ</a></li>
+            <li><a href="{{ page.next.url | relative_url }}">次へ</a></li>
         {% else %}
             <li>次はありません</li>
         {% endif %}
