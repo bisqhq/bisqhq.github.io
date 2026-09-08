@@ -205,3 +205,22 @@ html {
     scrollbar-color: #f7dc8d #fff; /* つまみの色  背景色 */
     scrollbar-width: thin; /* 細めにする */
 }
+
+/* 外枠だけの角丸ボタンデザイン */
+.booth-btn {
+    display: inline-block;
+    padding: 0.6em 2em;           /* ボタンの内側の余白 */
+    border: 1px solid #fc4d50;     /* 外枠の線（太さと色） */
+    border-radius: 20px;          /* 角丸の丸み具合 */
+    color: #fc4d50;               /* 文字の色（枠線の色と合わせる） */
+    text-decoration: none;        /* 下線を消す */
+    font-size: 0.9em;             /* 文字の大きさ */
+    letter-spacing: 0.1em;        /* 文字間隔 */
+    transition: all 0.3s ease;    /* ホバー時のアニメーション */
+}
+
+/* マウスを乗せたとき（ホバー時）の背景反転効果 */
+.booth-btn:hover {
+    background-color: #fc4d50;    /* 背景に色をつける */
+    color: #ffffff;               /* 文字を白にする */
+}
