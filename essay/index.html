@@ -7,11 +7,11 @@ layout: default
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     <p>{{ post.content }}</p>
     
-    {% if post.more %}
-    <div class="more-section">
-        <h3>: more</h3>
+    {% if post.more and post.more != "" %}
+    <details class="more-section">
+        <summary>: more</summary>
         <p>{{ post.more | markdownify }}</p>
-    </div>
+    </details>
     {% endif %}
 
     <time><span>{{ post.date | date: "%Y.%m.%d" }}</span></time>
