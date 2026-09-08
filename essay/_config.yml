@@ -1,0 +1,3 @@
+title: My Essay & Diary
+permalink: /posts/:year-:month-:day-:title.html
+markdown: kramdown
