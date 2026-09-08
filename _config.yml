@@ -1,5 +1,5 @@
 title: My Essay & Diary
 baseurl: "/essay"
-permalink: /posts/:year-:month-:day-:title.html
+permalink: /essay/posts/:year-:month-:day-:title.html
 markdown: kramdown
 timezone: Asia/Tokyo
