@@ -2,22 +2,36 @@
 layout: default
 ---
 
-{% assign essay_posts = site.posts | where_exp: "item", "item.path contains 'essay/_posts'" %}
-
-{% for post in essay_posts %}
+{% for post in paginator.posts %}
 <article>
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     <p>{{ post.content }}</p>
+    
+    {% if post.more %}
+    <div class="more-section">
+        <h3>: more</h3>
+        <p>{{ post.more | markdownify }}</p>
+    </div>
+    {% endif %}
+
     <time><span>{{ post.date | date: "%Y.%m.%d" }}</span></time>
-</article>
-{% else %}
-<article>
-    <p>記事がまだありません。</p>
 </article>
 {% endfor %}
 
 <div class="menu">
     <ul>
-        <li><a href="{{ '/' | relative_url }}">INDEX</a></li>
+        {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | relative_url }}">前へ</a></li>
+        {% else %}
+            <li>前はありません</li>
+        {% endif %}
+        
+        <li>| <a href="{{ '/' | relative_url }}">INDEX</a> |</li>
+
+        {% if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path | relative_url }}">次へ</a></li>
+        {% else %}
+            <li>次はありません</li>
+        {% endif %}
     </ul>
 </div>
