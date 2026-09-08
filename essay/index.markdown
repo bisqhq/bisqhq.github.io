@@ -9,8 +9,10 @@ layout: default
     
     {% if post.more and post.more != "" %}
     <details class="more-section">
-        <summary>: more</summary>
-        <p>{{ post.more | markdownify }}</p>
+        <summary>:more</summary>
+        <div class="more-content">
+            {{ post.more | markdownify }}
+        </div>
     </details>
     {% endif %}
 
