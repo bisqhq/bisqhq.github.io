@@ -5,3 +5,5 @@ markdown: kramdown
 timezone: Asia/Tokyo
 paginate: 1
 paginate_path: "/essay/page:num/"
+plugins:
+  - jekyll-paginate
