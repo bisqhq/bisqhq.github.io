@@ -117,6 +117,41 @@
             font-size: 13px;
         }
     }
+
+        /* --- 追記（more）開閉デザイン --- */
+    details.more-section {
+        margin-top: 1.5em;
+        text-align: left;
+    }
+
+    /* クリックするリンク（ボタン）部分 */
+    details.more-section summary {
+        cursor: pointer;
+        list-style: none; /* デフォルトの矢印を消す */
+        font-size: 0.9em;
+        color: #666;
+        text-align: justify;
+        outline: none;
+    }
+    
+    /* Safari等でデフォルト矢印を消す記述 */
+    details.more-section summary::-webkit-details-marker {
+        display: none;
+    }
+
+    /* ホバー（マウスを載せたとき）の見た目 */
+    details.more-section summary:hover {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    /* 開いたときの中身 */
+    details.more-section p {
+        margin-top: 1em;
+        padding-top: 1em;
+        border-top: 1px solid #efefef;
+    }
+        
     </style>
 </head>
 <body>
