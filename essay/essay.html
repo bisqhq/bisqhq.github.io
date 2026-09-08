@@ -1,14 +1,17 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
 <article>
-    <h2>#title#</h2>
-    <p>#text#</p>
-    <br>
-    <time><span>#date#</span></time>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.content }}</p>
+    <time><span>{{ post.date | date: "%Y.%m.%d" }}</span></time>
 </article>
+{% endfor %}
+
 <div class="menu">
     <ul>
-        <li>#prev_PREV_PREV#</li>
-        <li><a href="https://nanos.jp/thisismeaxxxi/">INDEX</a></li>
-        <li>#next_NEXT_NEXT#</li>
+        <li><a href="/">INDEX</a></li>
     </ul>
 </div>
-<br><br><br>
