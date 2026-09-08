@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign essay_posts = site.posts | where_exp: "item", "item.url contains '/essay/'" %}
+{% assign essay_posts = site.posts | where_exp: "item", "item.path contains 'essay/_posts'" %}
 
 {% for post in essay_posts %}
 <article>
@@ -10,7 +10,6 @@ layout: default
     <p>{{ post.content }}</p>
     <time><span>{{ post.date | date: "%Y.%m.%d" }}</span></time>
 </article>
-
 {% else %}
 <article>
     <p>記事がまだありません。</p>
