@@ -20,12 +20,12 @@
         <main>
             <section>
                 <h2>PASS CHECK</h2>
-                <p class="pass-desc">これより先は成人向けコンテンツを含みます。<br>パスワードを入力してください。</p>
+                <p class="pass-desc">これより先は成人向け（18禁）コンテンツを含みます。<br>19歳以上（高校生不可）の方のみ、ご自身の生まれ年を西暦4桁で入力してください。</p>
                 <form onsubmit="checkPassword(event)">
-                    <input type="password" id="pass-field" placeholder="Password" autofocus>
+                    <input type="password" id="pass-field" placeholder="YYYY" maxlength="4" autofocus>
                     <button type="submit">ENTER</button>
                 </form>
-                <p id="pass-error">パスワードが違います</p>
+                <p id="pass-error">19歳未満の方は閲覧できません（半角数字4桁）</p>
             </section>
         </main>
     </div>
@@ -57,23 +57,24 @@
         </main>
     </div>
 
-<script>
-    // ★ ここに設定したいパスワードを入力してください（例: "1234"）
-    const SECRET_PASSWORD = "0420";
-
+    <script>
     function checkPassword(event) {
         event.preventDefault(); // リロード防止
+        
         const inputPass = document.getElementById("pass-field").value;
+        const inputYear = parseInt(inputPass, 10); // 数字に変換
+
         const errorMsg = document.getElementById("pass-error");
         const gate = document.getElementById("pass-gate");
         const content = document.getElementById("protected-content");
 
-        if (inputPass === SECRET_PASSWORD) {
-            // 正解：入力画面を隠して本文を表示（記憶はしない）
+        // ★ 判定条件（19歳以上 ＝ 2007年以前生まれ）
+        if (!isNaN(inputYear) && inputYear >= 1920 && inputYear <= 2007) {
+            // 条件クリア！入力画面を隠して本文を表示
             gate.style.display = "none";
             content.style.display = "block";
         } else {
-            // 不正解：エラーを表示して入力欄を空にする
+            // 2008以降（18歳以下）や数字以外を入力した場合はエラー
             errorMsg.style.display = "block";
             document.getElementById("pass-field").value = "";
         }
