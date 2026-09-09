@@ -79,7 +79,12 @@
             document.getElementById("pass-field").value = "";
         }
     }
-
+    // ページ読み込み時に解除済みかチェック
+    window.addEventListener("DOMContentLoaded", function() {
+        if (sessionStorage.getItem("r18_unlocked") === "true") {
+            document.getElementById("pass-gate").style.display = "none";
+            document.getElementById("protected-content").style.display = "block";
+        }
     });
     </script>
 </body>
