@@ -181,3 +181,58 @@ rt {
 .novel-text {
     white-space: pre-wrap;
 }
+
+/* --- パスワードゲート用の追加スタイル --- */
+
+/* 入力画面（初期表示） */
+#pass-gate {
+    display: block;
+}
+
+/* 本文（初期表示は隠す） */
+#protected-content {
+    display: none;
+}
+
+/* 入力欄の説明テキスト */
+.pass-desc {
+    font-size: 0.9em;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+/* パスワード入力フォーム */
+#pass-gate input[type="password"] {
+    -webkit-appearance: none;
+    padding: 0 0.5em;
+    height: 30px;
+    background-color: var(--color);
+    border: none;
+    border-bottom: thin solid var(--black);
+    border-radius: 0;
+    font-size: 11px;
+    color: var(--black);
+    text-align: center;
+    width: 120px;
+    margin-right: 0.5em;
+    outline: none;
+}
+
+#pass-gate button[type="submit"] {
+    cursor: pointer;
+    border-bottom: thin solid var(--black);
+    color: var(--black);
+}
+
+#pass-gate button[type="submit"]:hover {
+    color: var(--white);
+    border-bottom-color: var(--white);
+}
+
+/* エラーメッセージ */
+#pass-error {
+    display: none;
+    margin-top: 1em;
+    font-size: 0.85em;
+    color: #b22222;
+}
