@@ -8,30 +8,85 @@
     <link rel="stylesheet" href="R.css">
 </head>
 <body>
-    
+
     <div class="line"></div>
-<header>
-    <img src="R.png" alt="">
-    <h1>NSFW</h1>
-</header>
-<main>
-    <section>
-        <h2>中篇</h2>
-        <ul>
-            きみとするはじめてのこと
-            <li><a href="novelette/01.html">てですること</a></li>
-            <li><a href="novelette/02.html">おくちですること</a></li>
-        </ul>
-    </section>
-    <section>
-        <h2>短篇</h2>
-        <ul>
-            <li><a href="novel/01.html">エアコンが壊れた部屋で汗だくでする話</a></li>
-            <li><a href="novel/02.html">仕事中のホテルマンに抱かれる話</a></li>
-            <li><a href="novel/03.html">なし崩し的に身体を重ねる話</a></li>
-            <li><a href="novel/04.html">セフレから恋人になる話</a>（烏養繋心）</li>
-        </ul>
-    </section>
-</main>
+
+    <!-- 1. パスワード入力画面（画面全体を覆う） -->
+    <div id="pass-gate">
+        <header>
+            <img src="R.png" alt="">
+            <h1>NSFW</h1>
+        </header>
+        <main>
+            <section>
+                <h2>PASS CHECK</h2>
+                <p class="pass-desc">これより先は成人向けコンテンツを含みます。<br>パスワードを入力してください。</p>
+                <form onsubmit="checkPassword(event)">
+                    <input type="password" id="pass-field" placeholder="Password" autofocus>
+                    <button type="submit">ENTER</button>
+                </form>
+                <p id="pass-error">パスワードが違います</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- 2. 本文コンテンツ（初期状態は隠す） -->
+    <div id="protected-content">
+        <header>
+            <img src="R.png" alt="">
+            <h1>NSFW</h1>
+        </header>
+        <main>
+            <section>
+                <h2>中篇</h2>
+                <ul>
+                    <li><a href="#">タイトル</a></li>
+                    <li><a href="#">タイトル</a></li>
+                    <li><a href="#">タイトル</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>短篇</h2>
+                <ul>
+                    <li><a href="novel/01.html">エアコンが壊れた部屋で汗だくでする話</a></li>
+                    <li><a href="novel/02.html">仕事中のホテルマンに抱かれる話</a></li>
+                    <li><a href="novel/03.html">なし崩し的に身体を重ねる話</a></li>
+                    <li><a href="novel/04.html">セフレから恋人になる話</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script>
+    // ★ ここに設定したいパスワードを入力してください（例: "1234"）
+    const SECRET_PASSWORD = "1234";
+
+    function checkPassword(event) {
+        event.preventDefault(); // リロード防止
+        const inputPass = document.getElementById("pass-field").value;
+        const errorMsg = document.getElementById("pass-error");
+        const gate = document.getElementById("pass-gate");
+        const content = document.getElementById("protected-content");
+
+        if (inputPass === SECRET_PASSWORD) {
+            // 解除：入力画面を隠して本文を表示
+            gate.style.display = "none";
+            content.style.display = "block";
+            sessionStorage.setItem("r18_unlocked", "true");
+        } else {
+            // エラー表示
+            errorMsg.style.display = "block";
+            document.getElementById("pass-field").value = "";
+        }
+    }
+
+    // ページ読み込み時に解除済みかチェック
+    window.addEventListener("DOMContentLoaded", function() {
+        if (sessionStorage.getItem("r18_unlocked") === "true") {
+            document.getElementById("pass-gate").style.display = "none";
+            document.getElementById("protected-content").style.display = "block";
+        }
+    });
+    </script>
 </body>
 </html>
