@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* ウェブフォントの読み込み */
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+
+/* 全体に適用する */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+/* root */
+:root {
+    --color: #9d8e87;
+    --white: #fff;
+    --black: #333;
+}
+
+/* 基本設定 */
+body {
+    background-color: var(--color);
+    text-align: left;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    color: var(--black);
+}
+
+.line {
+    position: relative;
+    padding-bottom: 5em;
+}
+
+.line::before {
+    position: fixed;
+    display: block;
+    content: '';
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100vh;
+    background-color: var(--black);
+    z-index: -99;
+}
+
+/* 横幅768px以上で読み込む */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+/* 横幅1024px以上で読み込む */
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* リンク */
+a,
+a:visited {
+    color: var(--black);
+    transition: .5s color;
+}
+
+a:hover,
+a:visited:hover {
+    color: var(--color);
+}
+
+header {
+    margin: 0 auto 3em;
+    padding: 3em 0;
+    background-color: var(--color);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1em;
+}
+
+main{
+    padding-bottom: 3em;
+    text-align: center;
+}
+
+section{
+    margin-bottom: 3em;
+    padding: 3em 0;
+    background-color: var(--color);
+}
+
+section h2{
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+section ul li{
+    margin-bottom: 0.5em;
+}
+
+/* アーティクル */
+article {
+    margin: 0 auto;
+    padding: 3em;
+    max-width: 700px;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* アーティクル見出し */
+article h1 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+article p {
+    font-family: var(--ja);
+}
+
+/* メニュー */
+.menu {
+    text-align: center;
+    margin: 1em auto 1.5em;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+.menu li a {
+    font-weight: bold;
+}
+
+/* フォーム系 */
+textarea,
+input[type],
+button[type=submit] {
+    -webkit-appearance: none;
+    padding: 0 0.5em;
+    height: 30px;
+    background-color: var(--color);
+    border: none;
+    border-bottom: thin solid var(--white);
+    border-radius: 0;
+    font-size: 11px;
+    color: #fff;
+}
+
+textarea {
+    width: 200px;
+    height: 70px;
+}
+
+input[type=text] {
+    width: 80px;
+}
+
+input[type=submit],
+button[type=submit] {
+    width: auto;
+}
