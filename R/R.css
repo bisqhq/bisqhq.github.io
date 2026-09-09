@@ -17,6 +17,7 @@
     --color: #9d8e87;
     --white: #fff;
     --black: #333;
+    overflow-y: scroll
 }
 
 /* 基本設定 */
