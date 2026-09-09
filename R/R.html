@@ -57,7 +57,7 @@
         </main>
     </div>
 
-    <script>
+<script>
     // ★ ここに設定したいパスワードを入力してください（例: "1234"）
     const SECRET_PASSWORD = "1234";
 
@@ -69,23 +69,15 @@
         const content = document.getElementById("protected-content");
 
         if (inputPass === SECRET_PASSWORD) {
-            // 解除：入力画面を隠して本文を表示
+            // 正解：入力画面を隠して本文を表示（記憶はしない）
             gate.style.display = "none";
             content.style.display = "block";
-            sessionStorage.setItem("r18_unlocked", "true");
         } else {
-            // エラー表示
+            // 不正解：エラーを表示して入力欄を空にする
             errorMsg.style.display = "block";
             document.getElementById("pass-field").value = "";
         }
     }
-    // ページ読み込み時に解除済みかチェック
-    window.addEventListener("DOMContentLoaded", function() {
-        if (sessionStorage.getItem("r18_unlocked") === "true") {
-            document.getElementById("pass-gate").style.display = "none";
-            document.getElementById("protected-content").style.display = "block";
-        }
-    });
     </script>
 </body>
 </html>
