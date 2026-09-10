@@ -1,4 +1,4 @@
-title: My Essay & Diary
+title: 雑記
 baseurl: "/essay"
 permalink: /essay/posts/:year-:month-:day-:title.html
 markdown: kramdown
