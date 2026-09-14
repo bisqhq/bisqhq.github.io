@@ -108,7 +108,7 @@ const postHtml = `
                             <a href="javascript:void(0);" class="clap-btn" onclick="animateClap(this, '${post.id}')"><span class="lnr lnr-heart"></span><span class="clap-count" id="count-${post.id}">0</span></a>
 
                             <!-- 吹き出しアイコン -->
-                            <a href="${formLink}"><span class="lnr lnr-bubble"></span></a>
+                            <a href="https://wavebox.me/wave/bm4tc1fdf2s2zz8k/"><span class="lnr lnr-bubble"></span></a>
                         </p>
                         ${moreHtml}
                     </div>
