@@ -45,6 +45,9 @@ const memoPosts = [
 let currentPage = 1;
 const itemsPerPage = 5;
 
+$(function() {
+    renderMemo();
+
     // PAGETOP
     $('.top').click(function() {
         $('body, html').animate({ scrollTop: 0 }, 500);
@@ -92,7 +95,7 @@ function renderMemo() {
                             <!-- ハートアイコン（クリックで拍手＋ピンク持続） -->
                             <a href="javascript:void(0);" class="clap-btn" onclick="animateClap(this, '${post.id}')"><span class="lnr lnr-heart"></span><span class="clap-count" id="count-${post.id}">0</span></a>
 
-                            <!-- 吹き出しアイコン（クリックでWaveboxを別タブで開く＋ブルー持続） -->
+                            <!-- 吹き出しアイコン（クリックでWaveboxを別タブで開く＋黒色持続） -->
                             <a href="${formLink}" target="_blank" onclick="$(this).find('.lnr-bubble').addClass('active bounce');"><span class="lnr lnr-bubble"></span></a>
                         </p>
                         ${moreHtml}
@@ -154,7 +157,6 @@ function animateClap(element, postId) {
     const $btn = $(element);
     const $heart = $btn.find('.lnr-heart');
 
-    // 色を固定化するための active クラスと、跳ねる用の bounce クラスを追加
     $heart.addClass('active');
     $heart.removeClass('bounce');
     void $heart[0].offsetWidth; 
@@ -189,23 +191,17 @@ function showSmileMessage(element) {
     const $btn = $(element);
     const $smile = $btn.find('.lnr-smile');
 
-    // 色を固定化するための active クラスと、跳ねる用の bounce クラスを追加
     $smile.addClass('active');
     $smile.removeClass('bounce');
     void $smile[0].offsetWidth; 
     $smile.addClass('bounce');
 
-    // 既存の吹き出しがあれば消す（連続クリック対策）
     $btn.find('.smile-pop-bubble').remove();
 
-    // メッセージをランダム選出
     const randomMsg = smileMessages[Math.floor(Math.random() * smileMessages.length)];
-
-    // 吹き出し要素を作成して表示
     const $bubble = $(`<div class="smile-pop-bubble">${randomMsg}</div>`);
     $btn.append($bubble);
 
-    // 2秒後に消去
     setTimeout(function() {
         $bubble.remove();
     }, 2000);
