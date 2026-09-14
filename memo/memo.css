@@ -28,7 +28,7 @@ body * {
 header {
     text-align: center;
     padding: 10px 20px;
-    background: rgba(239, 239, 239,0.9);
+    background: rgba(239, 239, 239, 0.9);
     position: fixed;
     top: 0;
     width: 100%;
@@ -212,7 +212,7 @@ section .social a .lnr-bubble:hover {
     color: #333;
 }
 
-/* 追記部分の開閉エリア */
+/* 追記部分（続きを読む）展開エリア */
 .more-content {
     display: none;
     margin-top: 15px;
