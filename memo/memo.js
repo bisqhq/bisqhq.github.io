@@ -45,20 +45,6 @@ const memoPosts = [
 let currentPage = 1;
 const itemsPerPage = 5;
 
-$(function() {
-    renderMemo();
-
-    // ハンバーガーメニュー
-    $('header span.lnr').click(function() {
-        if ($(this).hasClass('lnr-menu')) {
-            $('nav').addClass('active');
-            $(this).removeClass('lnr-menu').addClass('lnr-cross');
-        } else {
-            $('nav').removeClass('active');
-            $(this).removeClass('lnr-cross').addClass('lnr-menu');
-        }
-    });
-
     // PAGETOP
     $('.top').click(function() {
         $('body, html').animate({ scrollTop: 0 }, 500);
