@@ -30,7 +30,7 @@ const memoPosts = [
     },
     {
         id: "post-20260914",
-        title: "ネトデト",
+        title: "隠居生活ふたたび",
         date: "2026.09.14",
         text: "SNSを見る時間が激減して快適です。",
         moreText: "",
