@@ -186,3 +186,41 @@ function animateClap(element, postId) {
         return (currentCount || 0) + 1;
     });
 }
+
+// ==========================================
+// 4. スマイルアイコンの「今日のひとこと」処理
+// ==========================================
+// 好きなメッセージをいくつでも追加できます！
+const smileMessages = [
+    "原稿がんばってます！✨",
+    "今日のおやつはプリンでした🍮",
+    "見に来てくれてありがとう！みかん🍊",
+    "秋の気配がしてきましたね🍁",
+    "進捗ダメです＼(^o^)／",
+    "ポチッとありがとう！😊"
+];
+
+function showSmileMessage(element) {
+    const $btn = $(element);
+    const $smile = $btn.find('.lnr-smile');
+
+    // 1. ぽよんアニメーション
+    $smile.removeClass('bounce');
+    void $smile[0].offsetWidth; 
+    $smile.addClass('bounce');
+
+    // 既存の吹き出しがあれば消す（連続クリック対策）
+    $btn.find('.smile-pop-bubble').remove();
+
+    // 2. メッセージをランダム選出
+    const randomMsg = smileMessages[Math.floor(Math.random() * smileMessages.length)];
+
+    // 3. 吹き出し要素を作成して表示
+    const $bubble = $(`<div class="smile-pop-bubble">${randomMsg}</div>`);
+    $btn.append($bubble);
+
+    // 2秒後に消去
+    setTimeout(function() {
+        $bubble.remove();
+    }, 2000);
+}
