@@ -2,47 +2,39 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMO</title>
-    <!-- 検索避け設定 -->
-    <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    
-    <!-- アイコンフォント & jQuery -->
+    <!-- Linearicons (アイコンフォント) -->
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    
-    <!-- CSS読み込み -->
+    <!-- 独自CSS -->
     <link rel="stylesheet" href="memo.css">
-    <!-- Firebase SDK (バージョン9/コンパクト互換) -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Firebase SDK (v8) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <!-- 独自JS -->
+    <script src="memo.js" defer></script>
 </head>
 <body>
 
-<!-- 全体レイアウト -->
-<header>
-    <h1>MEMO</h1>
-</header>
+    <!-- ヘッダーエリア -->
+    <header>
+        <h1>MEMO</h1>
+    </header>
 
-<!-- 一覧画面レイアウト：記事がここに流し込まれます -->
-<article id="memo-container">
-</article>
+    <!-- 一覧画面レイアウト：JSで記事がここに流し込まれます -->
+    <article id="memo-container"></article>
 
-<!-- 一覧画面レイアウト：下部表示（ページネーション） -->
-<div class="pager">
-    <ul>
-        <li class="next" id="btn-next">
-            <!-- JavaScriptで描画 -->
-        </li>
-        <li class="top"><span class="lnr lnr-chevron-up"></span><i>PAGETOP</i></li>
-        <li class="prev" id="btn-prev">
-            <!-- JavaScriptで描画 -->
-        </li>
+    <!-- ページネーション ＆ PAGETOP -->
+    <ul class="pager">
+        <li id="btn-prev" class="disabled"><i>PREV</i><span class="lnr lnr-arrow-right-circle"></span></li>
+        <li class="top"><i>PAGETOP</i><span class="lnr lnr-chevron-up-circle"></span></li>
+        <li id="btn-next" class="disabled"><i>NEXT</i><span class="lnr lnr-arrow-left-circle"></span></li>
     </ul>
-</div>
-
-<!-- スクリプト読み込み -->
-<script src="memo.js"></script>
 
 </body>
 </html>
