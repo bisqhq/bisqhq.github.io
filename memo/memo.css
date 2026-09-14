@@ -196,23 +196,6 @@ section main .foot .social {
     left: 0;
 }
 
-section .social a .lnr {
-    font-size: 16px;
-    margin-right: 5px;
-}
-
-section .social a .lnr-smile:hover {
-    color: #FFC057;
-}
-
-section .social a .lnr-heart:hover {
-    color: #FC5185;
-}
-
-section .social a .lnr-bubble:hover {
-    color: #333;
-}
-
 /* 追記部分（続きを読む）展開エリア */
 .more-content {
     display: none;
@@ -277,7 +260,9 @@ section .social a .lnr-bubble:hover {
     background: #888;
 }
 
-/* --- 拍手・いいねの連打アニメーション用 --- */
+/* ==========================================
+   ソーシャルアイコン（アニメーション＆色保持）
+   ========================================== */
 .social a {
     display: inline-block !important;
     position: relative !important;
@@ -285,26 +270,44 @@ section .social a .lnr-bubble:hover {
     text-decoration: none !important;
 }
 
-/* アイコン変形を有効化 */
 .social a span.lnr {
     display: inline-block !important;
-    transition: transform 0.1s ease;
+    font-size: 16px;
+    margin-right: 5px;
+    transition: transform 0.1s ease, color 0.3s ease;
 }
 
-/* 押した時にハートがぷくっと大きく跳ねる */
-.social a span.lnr-heart.bounce {
+/* 1. ホバー時 ＆ クリック後の色持続（activeクラス） */
+.social a:hover .lnr-heart,
+.social a .lnr-heart.active {
+    color: #FC5185 !important; /* ピンク */
+}
+
+.social a:hover .lnr-smile,
+.social a .lnr-smile.active {
+    color: #FFB300 !important; /* イエロー */
+}
+
+.social a:hover .lnr-bubble,
+.social a .lnr-bubble.active {
+    color: #4AA0E6 !important; /* ブルー */
+}
+
+/* 2. ぽよんと跳ねるアニメーション */
+.social a span.lnr-heart.bounce,
+.social a span.lnr-smile.bounce,
+.social a span.lnr-bubble.bounce {
     animation: heartBounce 0.35s ease-in-out !important;
-    color: #FC5185 !important;
 }
 
 @keyframes heartBounce {
     0%   { transform: scale(1) rotate(0deg); }
-    30%  { transform: scale(1.6) rotate(-15deg); } /* ぐっと大きくなって傾く */
-    60%  { transform: scale(0.85) rotate(8deg); }  /* 少し縮んで反動 */
+    30%  { transform: scale(1.6) rotate(-15deg); }
+    60%  { transform: scale(0.85) rotate(8deg); }
     100% { transform: scale(1) rotate(0deg); }
 }
 
-/* エフェクト数字（+1）が浮き出る演出 */
+/* 3. ハート連打時の「+1」アニメーション */
 .clap-pop-num {
     position: absolute;
     top: -18px;
@@ -328,31 +331,12 @@ section .social a .lnr-bubble:hover {
     }
 }
 
-/* 拍手数の数字スタイル（画面上は非表示にし、Firebaseにだけ記録） */
+/* 4. カウント数字（非表示にし、Firebaseにだけ記録） */
 .clap-count {
-    font-size: 11px;
-    margin-left: 3px;
-    margin-right: 8px;
-    color: #888;
-    font-family: 'Alegreya', serif;
-    display: none !important; /* ★ここを inline-block から none に変更 */
-    vertical-align: middle;
+    display: none !important;
 }
 
-/* --- 今日のひとことポップアップ用（シンプル白抜き） --- */
-
-/* マウスを乗せた時（ホバー時）は黄色に */
-.social a:hover .lnr-smile {
-    color: #FFB300 !important;
-}
-
-/* 押した瞬間（アニメーション中）もぽよんと跳ねて黄色に */
-.social a .lnr-smile.bounce {
-    animation: heartBounce 0.35s ease-in-out !important;
-    color: #FFB300 !important;
-}
-
-/* ポップアップ吹き出し（白抜き＆グレー枠） */
+/* 5. スマイルのポップアップ吹き出し（シンプル白抜き） */
 .smile-pop-bubble {
     position: absolute;
     bottom: 32px;
@@ -360,9 +344,9 @@ section .social a .lnr-bubble:hover {
     transform: translateX(-50%);
     background: #ffffff;
     color: #444444;
-    border: 1px solid #cccccc; /* シンプルなグレー枠 */
+    border: 1px solid #cccccc;
     padding: 5px 10px;
-    border-radius: 4px; /* すっきりした形状 */
+    border-radius: 4px;
     font-size: 11px;
     white-space: nowrap;
     box-shadow: 0 2px 6px rgba(0,0,0,0.06);
@@ -371,7 +355,6 @@ section .social a .lnr-bubble:hover {
     animation: smilePop 2s ease-out forwards;
 }
 
-/* 吹き出しの三角形（枠線付き白抜き） */
 .smile-pop-bubble::before,
 .smile-pop-bubble::after {
     content: "";
@@ -383,21 +366,18 @@ section .social a .lnr-bubble:hover {
     border-style: solid;
 }
 
-/* 三角の外枠（グレー） */
 .smile-pop-bubble::before {
     top: 100%;
     border-width: 5px 5px 0 5px;
     border-color: #cccccc transparent transparent transparent;
 }
 
-/* 三角の内側（白で塗りつぶし） */
 .smile-pop-bubble::after {
     top: calc(100% - 1px);
     border-width: 4px 4px 0 4px;
     border-color: #ffffff transparent transparent transparent;
 }
 
-/* ふわっと出て消えるアニメーション */
 @keyframes smilePop {
     0% {
         opacity: 0;
