@@ -136,3 +136,26 @@ function changePage(direction) {
     renderMemo();
     $('body, html').animate({ scrollTop: 0 }, 300);
 }
+
+// ==========================================
+// 3. 拍手ハートの連打アニメーション処理
+// ==========================================
+function animateClap(element) {
+    const $btn = $(element);
+    const $heart = $btn.find('.lnr-heart');
+
+    // ぽよんアニメーション（クラスの付け外し）
+    $heart.removeClass('bounce');
+    // リフローを発生させてアニメーションを再動かすための記述
+    void $heart[0].offsetWidth; 
+    $heart.addClass('bounce');
+
+    // 「+1」の数字が浮き上がるエフェクトを生成
+    const $pop = $('<span class="clap-pop-num">+1</span>');
+    $btn.append($pop);
+
+    // アニメーションが終わったら要素を削除（0.6秒後）
+    setTimeout(function() {
+        $pop.remove();
+    }, 600);
+}
