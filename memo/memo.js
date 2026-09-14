@@ -92,7 +92,7 @@ function renderMemo() {
 
         const formLink = post.formUrl || 'javascript:void(0);';
 
-        const postHtml = `
+const postHtml = `
             <section>
                 <h2>${post.title}</h2>
                 <p class="date">${post.date}</p>
@@ -101,12 +101,13 @@ function renderMemo() {
                     ${post.moreText ? `<div class="more-content">${post.moreText}</div>` : ''}
                     <div class="foot">
                         <p class="social">
+                            <!-- スマイルアイコン -->
                             <a href="javascript:void(0);"><span class="lnr lnr-smile"></span></a>
-                            <!-- ★ハートアイコンに拍手カウント表示用要素とIDを追加 -->
-                            <a href="javascript:void(0);" class="clap-btn" onclick="animateClap(this, '${post.id}')">
-                                <span class="lnr lnr-heart"></span>
-                                <span class="clap-count" id="count-${post.id}">0</span>
-                            </a>
+
+                            <!-- ★ハートアイコン（クリックでアニメーション＆Firebase連動） -->
+                            <a href="javascript:void(0);" class="clap-btn" onclick="animateClap(this, '${post.id}')"><span class="lnr lnr-heart"></span><span class="clap-count" id="count-${post.id}">0</span></a>
+
+                            <!-- 吹き出しアイコン -->
                             <a href="${formLink}"><span class="lnr lnr-bubble"></span></a>
                         </p>
                         ${moreHtml}
