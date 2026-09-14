@@ -288,7 +288,7 @@ section main .foot .social {
 .smile-pop-bubble {
     position: absolute;
     bottom: 32px;
-    left: -15px;               /* ★吹き出し本体を左へしっかり移動 */
+    left: -13px;               /* ★吹き出し本体を左へしっかり移動 */
     min-width: 130px;
     width: max-content;
     max-width: 200px;
