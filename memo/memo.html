@@ -2,13 +2,16 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>MEMO</title>
+    <title>NOTEBOOK</title>
+    <!-- 検索避け設定 -->
+    <meta name="robots" content="noindex,nofollow,noarchive">
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-  <meta name="robots" content="noindex,nofollow,noarchive">
+    
     <!-- アイコンフォント & jQuery -->
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <!-- CSS -->
+    
+    <!-- CSS読み込み -->
     <link rel="stylesheet" href="memo.css">
 </head>
 <body>
@@ -16,7 +19,7 @@
 <!-- 全体レイアウト -->
 <header>
     <span class="lnr lnr-menu"></span>
-    <h1>MEMO</h1>
+    <h1>NOTEBOOK</h1>
 </header>
 <nav>
     <ul>
@@ -27,7 +30,7 @@
 </nav>
 
 <!-- 一覧画面レイアウト：記事がここに流し込まれます -->
-<article id="blog-container">
+<article id="memo-container">
 </article>
 
 <!-- 一覧画面レイアウト：下部表示（ページネーション） -->
@@ -43,7 +46,7 @@
     </ul>
 </div>
 
-<!-- スクリプトの読み込み -->
+<!-- スクリプト読み込み -->
 <script src="memo.js"></script>
 
 </body>
