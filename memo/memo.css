@@ -328,13 +328,13 @@ section .social a .lnr-bubble:hover {
     }
 }
 
-/* 拍手数の数字スタイル（ハートの右隣に配置） */
+/* 拍手数の数字スタイル（画面上は非表示にし、Firebaseにだけ記録） */
 .clap-count {
     font-size: 11px;
     margin-left: 3px;
     margin-right: 8px;
     color: #888;
     font-family: 'Alegreya', serif;
-    display: inline-block !important;
+    display: none !important; /* ★ここを inline-block から none に変更 */
     vertical-align: middle;
 }
