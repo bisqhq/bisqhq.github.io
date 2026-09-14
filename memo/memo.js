@@ -7,15 +7,13 @@ const memoPosts = [
         date: "2026.09.14",
         text: "秋のWebイベントに参加します！<br>新刊のサンプルをアップしました。",
         moreText: "ここが「続きを読む」を押した時に開く追記部分です。<br>長い文章やネタバレ感想などはここに入力できます。",
-        clapUrl: "https://example.com/clap", // 拍手ページのURL
-        formUrl: "https://example.com/form"  // お問い合わせページのURL
+        formUrl: "https://example.com/form"  // お問い合わせ・フォーム等のURL（なければ空欄）
     },
     {
         title: "サイトを新しくしました",
         date: "2026.09.01",
         text: "GitHub Pagesにmemo（ログ）を移行しました！",
         moreText: "", // 追記がない場合は空欄にする
-        clapUrl: "",
         formUrl: ""
     }
 ];
@@ -71,8 +69,7 @@ function renderMemo() {
             `;
         }
 
-        // 各アイコンのリンク先
-        const clapLink = post.clapUrl || 'javascript:void(0);';
+        // 各アイコンのリンク先（フォームがない場合は空リンク）
         const formLink = post.formUrl || 'javascript:void(0);';
 
         const postHtml = `
@@ -84,8 +81,9 @@ function renderMemo() {
                     ${post.moreText ? `<div class="more-content">${post.moreText}</div>` : ''}
                     <div class="foot">
                         <p class="social">
-                            <a href=""><span class="lnr lnr-smile"></span></a>
-                            <a href="${clapLink}"><span class="lnr lnr-heart"></span></a>
+                            <a href="javascript:void(0);"><span class="lnr lnr-smile"></span></a>
+                            <!-- ★ハートアイコンをクリックしたときにぽよんアニメーションを発動 -->
+                            <a href="javascript:void(0);" class="clap-btn" onclick="animateClap(this)"><span class="lnr lnr-heart"></span></a>
                             <a href="${formLink}"><span class="lnr lnr-bubble"></span></a>
                         </p>
                         ${moreHtml}
@@ -146,8 +144,7 @@ function animateClap(element) {
 
     // ぽよんアニメーション（クラスの付け外し）
     $heart.removeClass('bounce');
-    // リフローを発生させてアニメーションを再動かすための記述
-    void $heart[0].offsetWidth; 
+    void $heart[0].offsetWidth; // リフローを発生させてアニメーションを再始動
     $heart.addClass('bounce');
 
     // 「+1」の数字が浮き上がるエフェクトを生成
