@@ -284,16 +284,21 @@ section .social a .lnr-bubble:hover {
     user-select: none;
 }
 
+/* ★これが必要でした！アイコンにアニメーション（変形）を効かせる設定 */
+.social a .lnr {
+    display: inline-block;
+}
+
 /* 押した時にぽよんと跳ねるアニメーション */
 .social a .lnr-heart.bounce {
     animation: heartBounce 0.3s ease;
-    color: #FC5185 !important;
+    color: #FC5185 !important; /* 押した瞬間にピンク色になります */
 }
 
 @keyframes heartBounce {
     0%   { transform: scale(1); }
-    40%  { transform: scale(1.5) rotate(-10deg); }
-    80%  { transform: scale(0.9) rotate(5deg); }
+    40%  { transform: scale(1.6) rotate(-12deg); } /* ぷくっと大きく傾く */
+    80%  { transform: scale(0.85) rotate(6deg); }  : Slight rebound
     100% { transform: scale(1) rotate(0deg); }
 }
 
