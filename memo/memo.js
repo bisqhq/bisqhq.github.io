@@ -23,7 +23,7 @@ const db = firebase.database();
 const memoPosts = [
     {
         id: "post-20260914",
-        title: "☺",
+        title: "にこにこ",
         date: "2026.09.14",
         text: "下のアイコンを押すとなんかかわいくなる仕様にしてみました。スマイルマーク内のメッセージは気が向いたら変えます。",
         moreText: "",
