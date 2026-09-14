@@ -204,10 +204,15 @@ function showSmileMessage(element) {
     const $btn = $(element);
     const $smile = $btn.find('.lnr-smile');
 
-    // 1. ぽよんアニメーション
+    // 1. ぽよんアニメーション（一度bounceクラスを外してつけ直す）
     $smile.removeClass('bounce');
     void $smile[0].offsetWidth; 
     $smile.addClass('bounce');
+
+    // アニメーション（0.35秒）が終わったら bounce クラスを消して元に戻す
+    setTimeout(function() {
+        $smile.removeClass('bounce');
+    }, 350);
 
     // 既存の吹き出しがあれば消す（連続クリック対策）
     $btn.find('.smile-pop-bubble').remove();
