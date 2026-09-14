@@ -27,7 +27,6 @@ const memoPosts = [
         date: "2026.09.14",
         text: "秋のWebイベントに参加します！<br>新刊のサンプルをアップしました。",
         moreText: "ここが「続きを読む」を押した時に開く追記部分です。<br>長い文章やネタバレ感想などはここに入力できます。",
-        formUrl: "https://wavebox.me/wave/bm4tc1fdf2s2zz8k/"
     },
     {
         id: "post-20260901",
@@ -35,7 +34,6 @@ const memoPosts = [
         date: "2026.09.01",
         text: "GitHub Pagesにmemo（ログ）を移行しました！",
         moreText: "",
-        formUrl: ""
     }
 ];
 
