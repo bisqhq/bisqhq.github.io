@@ -19,6 +19,7 @@ a {
 body {
     font-family: "Andada", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ 明朝", serif;
     text-align: justify;
+    overflow-y: scroll;
 }
 
 body * {
@@ -253,4 +254,25 @@ section .social a .lnr-bubble:hover {
 .pager li.disabled {
     opacity: 0.3;
     pointer-events: none;
+}
+
+/* スクロールバー全体の幅 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* スクロールバーの背景（レール部分） */
+::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+
+/* スクロールバーのつまみ部分 */
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+/* つまみをホバーした時 */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
 }
