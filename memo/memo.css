@@ -279,35 +279,36 @@ section .social a .lnr-bubble:hover {
 
 /* --- 拍手・いいねの連打アニメーション用 --- */
 .social a {
-    display: inline-block;
-    position: relative;
+    display: inline-block !important;
+    position: relative !important;
     user-select: none;
+    text-decoration: none !important;
 }
 
-/* ★これが必要でした！アイコンにアニメーション（変形）を効かせる設定 */
-.social a .lnr {
-    display: inline-block;
+/* アイコン変形を有効化 */
+.social a span.lnr {
+    display: inline-block !important;
+    transition: transform 0.1s ease;
 }
 
-/* 押した時にぽよんと跳ねるアニメーション */
-.social a .lnr-heart.bounce {
-    animation: heartBounce 0.3s ease;
-    color: #FC5185 !important; /* 押した瞬間にピンク色になります */
+/* 押した時にハートがぷくっと大きく跳ねる */
+.social a span.lnr-heart.bounce {
+    animation: heartBounce 0.35s ease-in-out !important;
+    color: #FC5185 !important;
 }
 
 @keyframes heartBounce {
-    0%   { transform: scale(1); }
-    40%  { transform: scale(1.6) rotate(-12deg); } /* ぷくっと大きく傾く */
-    80%  { transform: scale(0.85) rotate(6deg); }  : Slight rebound
+    0%   { transform: scale(1) rotate(0deg); }
+    30%  { transform: scale(1.6) rotate(-15deg); } /* ぐっと大きくなって傾く */
+    60%  { transform: scale(0.85) rotate(8deg); }  /* 少し縮んで反動 */
     100% { transform: scale(1) rotate(0deg); }
 }
 
-/* エフェクト数字（+1）が浮かび上がって消える演出 */
+/* エフェクト数字（+1）が浮き出る演出 */
 .clap-pop-num {
     position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: -18px;
+    left: 8px;
     font-size: 11px;
     font-weight: bold;
     color: #FC5185;
@@ -319,18 +320,21 @@ section .social a .lnr-bubble:hover {
 @keyframes floatUp {
     0% {
         opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+        transform: translateY(0) scale(1);
     }
     100% {
         opacity: 0;
-        transform: translate(-50%, -20px) scale(1.3);
+        transform: translateY(-20px) scale(1.3);
     }
 }
 
-/* 拍手数の数字スタイル */
+/* 拍手数の数字スタイル（ハートの右隣に配置） */
 .clap-count {
     font-size: 11px;
-    margin-left: 2px;
+    margin-left: 3px;
+    margin-right: 8px;
     color: #888;
     font-family: 'Alegreya', serif;
+    display: inline-block !important;
+    vertical-align: middle;
 }
