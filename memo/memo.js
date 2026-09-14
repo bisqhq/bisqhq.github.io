@@ -132,15 +132,15 @@ function toggleMore(element) {
 // ページ送り
 function updatePagination(endIndex) {
     if (endIndex < memoPosts.length) {
-        $('#btn-next').html(`<a href="javascript:void(0);" onclick="changePage(1)"><i>NEXT</i><span class="lnr lnr-arrow-left-circle"></span></a>`).removeClass('disabled');
+        $('#btn-next').html(`<a href="javascript:void(0);" onclick="changePage(1)"><i>NEXT</i><span class="lnr lnr-arrow-right-circle"></span></a>`).removeClass('disabled');
     } else {
-        $('#btn-next').html(`<i>NEXT</i><span class="lnr lnr-arrow-left-circle"></span>`).addClass('disabled');
+        $('#btn-next').html(`<i>NEXT</i><span class="lnr lnr-arrow-right-circle"></span>`).addClass('disabled');
     }
 
     if (currentPage > 1) {
-        $('#btn-prev').html(`<a href="javascript:void(0);" onclick="changePage(-1)"><i>PREV</i><span class="lnr lnr-arrow-right-circle"></span></a>`).removeClass('disabled');
+        $('#btn-prev').html(`<a href="javascript:void(0);" onclick="changePage(-1)"><i>PREV</i><span class="lnr lnr-arrow-left-circle"></span></a>`).removeClass('disabled');
     } else {
-        $('#btn-prev').html(`<i>PREV</i><span class="lnr lnr-arrow-right-circle"></span>`).addClass('disabled');
+        $('#btn-prev').html(`<i>PREV</i><span class="lnr lnr-arrow-left-circle"></span>`).addClass('disabled');
     }
 }
 
