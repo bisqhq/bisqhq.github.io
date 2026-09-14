@@ -338,3 +338,62 @@ section .social a .lnr-bubble:hover {
     display: none !important; /* ★ここを inline-block から none に変更 */
     vertical-align: middle;
 }
+
+/* --- 今日のひとことポップアップ用 --- */
+.social a .lnr-smile.bounce {
+    animation: heartBounce 0.35s ease-in-out !important;
+    color: #FFB300 !important; /* 押した時に可愛い黄色・オレンジ系になります */
+}
+
+/* ポップアップ吹き出しのスタイル */
+.smile-pop-bubble {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    color: #444444;
+    border: 1.5px solid #FFB300;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    pointer-events: none;
+    z-index: 100;
+    animation: smilePop 2s ease-out forwards;
+}
+
+/* 吹き出しの小さなシッポ（三角） */
+.smile-pop-bubble::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FFB300 transparent transparent transparent;
+}
+
+@keyframes smilePop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 10px) scale(0.8);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -5px) scale(1.05);
+    }
+    25% {
+        transform: translate(-50%, 0) scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -10px) scale(0.9);
+    }
+}
