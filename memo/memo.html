@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>MEMO</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="robots" content="noindex,nofollow,noarchive">
+    <!-- アイコンフォント & jQuery -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<!-- 全体レイアウト -->
+<header>
+    <span class="lnr lnr-menu"></span>
+    <h1>MEMO</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="">ABOUT</a></li>
+        <li><a href="">MAIN</a></li>
+        <li><a href="">FORM</a></li>
+    </ul>
+</nav>
+
+<!-- 一覧画面レイアウト：記事がここに流し込まれます -->
+<article id="blog-container">
+</article>
+
+<!-- 一覧画面レイアウト：下部表示（ページネーション） -->
+<div class="pager">
+    <ul>
+        <li class="next" id="btn-next">
+            <!-- JavaScriptで描画 -->
+        </li>
+        <li class="top"><span class="lnr lnr-chevron-up"></span><i>PAGETOP</i></li>
+        <li class="prev" id="btn-prev">
+            <!-- JavaScriptで描画 -->
+        </li>
+    </ul>
+</div>
+
+<!-- スクリプトの読み込み -->
+<script src="blog.js"></script>
+
+</body>
+</html>
