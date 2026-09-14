@@ -290,7 +290,7 @@ section main .foot .social {
 
 .social a:hover .lnr-bubble,
 .social a .lnr-bubble.active {
-    color: #4AA0E6 !important; /* ブルー */
+    color: #333333 !important; /* ブルー */
 }
 
 /* 2. ぽよんと跳ねるアニメーション */
