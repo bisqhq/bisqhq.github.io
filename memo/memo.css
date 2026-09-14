@@ -284,31 +284,34 @@ section main .foot .social {
     display: none !important;
 }
 
-/* 5. スマイルのポップアップ吹き出し（シンプル白抜き） */
+/* 5. スマイルのポップアップ吹き出し（スマホ対応・見切れ防止） */
 .smile-pop-bubble {
     position: absolute;
     bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;                   /* 左端に配置 */
+    min-width: 140px;          /* テキストがはみ出ない最低幅 */
+    width: max-content;        /* 文字数に合わせた自動幅 */
+    max-width: 220px;          /* スマホ画面からはみ出ない上限幅 */
     background: #ffffff;
     color: #444444;
     border: 1px solid #cccccc;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: 4px;
     font-size: 11px;
-    white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    white-space: normal;       /* 長い文章は自動で折り返す */
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     pointer-events: none;
     z-index: 100;
     animation: smilePop 2s ease-out forwards;
 }
 
+/* 吹き出しの矢印（しっぽ）の位置調整 */
 .smile-pop-bubble::before,
 .smile-pop-bubble::after {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 12px;                /* アイコン（左端）の直上に矢印を固定 */
     width: 0;
     height: 0;
     border-style: solid;
@@ -329,18 +332,18 @@ section main .foot .social {
 @keyframes smilePop {
     0% {
         opacity: 0;
-        transform: translate(-50%, 6px);
+        transform: translateY(6px);
     }
     15% {
         opacity: 1;
-        transform: translate(-50%, 0);
+        transform: translateY(0);
     }
     80% {
         opacity: 1;
-        transform: translate(-50%, 0);
+        transform: translateY(0);
     }
     100% {
         opacity: 0;
-        transform: translate(-50%, -6px);
+        transform: translateY(-6px);
     }
 }
