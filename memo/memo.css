@@ -340,9 +340,16 @@ section .social a .lnr-bubble:hover {
 }
 
 /* --- 今日のひとことポップアップ用（シンプル白抜き） --- */
+
+/* マウスを乗せた時（ホバー時）は黄色に */
+.social a:hover .lnr-smile {
+    color: #FFB300 !important;
+}
+
+/* 押した瞬間（アニメーション中）もぽよんと跳ねて黄色に */
 .social a .lnr-smile.bounce {
     animation: heartBounce 0.35s ease-in-out !important;
-    color: #888888 !important; /* 押した時もシックなグレーに */
+    color: #FFB300 !important;
 }
 
 /* ポップアップ吹き出し（白抜き＆グレー枠） */
@@ -353,12 +360,12 @@ section .social a .lnr-bubble:hover {
     transform: translateX(-50%);
     background: #ffffff;
     color: #444444;
-    border: 1px solid #cccccc; /* タイトル背景になじむシンプルなグレー枠 */
+    border: 1px solid #cccccc; /* シンプルなグレー枠 */
     padding: 5px 10px;
-    border-radius: 4px; /* 丸みを抑えたすっきりした形状 */
+    border-radius: 4px; /* すっきりした形状 */
     font-size: 11px;
     white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06); /* 影もごく控えめに */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     pointer-events: none;
     z-index: 100;
     animation: smilePop 2s ease-out forwards;
@@ -383,7 +390,7 @@ section .social a .lnr-bubble:hover {
     border-color: #cccccc transparent transparent transparent;
 }
 
-/* 三角の内側（白で塗りつぶして枠線だけ見せる） */
+/* 三角の内側（白で塗りつぶし） */
 .smile-pop-bubble::after {
     top: calc(100% - 1px);
     border-width: 4px 4px 0 4px;
