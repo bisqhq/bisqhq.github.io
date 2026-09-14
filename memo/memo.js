@@ -101,8 +101,8 @@ const postHtml = `
                     ${post.moreText ? `<div class="more-content">${post.moreText}</div>` : ''}
                     <div class="foot">
                         <p class="social">
-                            <!-- スマイルアイコン -->
-                            <a href="javascript:void(0);"><span class="lnr lnr-smile"></span></a>
+                            <!-- スマイルアイコン（クリックでひとことポップアップ） -->
+<a href="javascript:void(0);" onclick="showSmileMessage(this)"><span class="lnr lnr-smile"></span></a>
 
                             <!-- ★ハートアイコン（クリックでアニメーション＆Firebase連動） -->
                             <a href="javascript:void(0);" class="clap-btn" onclick="animateClap(this, '${post.id}')"><span class="lnr lnr-heart"></span><span class="clap-count" id="count-${post.id}">0</span></a>
