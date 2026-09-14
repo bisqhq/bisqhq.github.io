@@ -339,61 +339,73 @@ section .social a .lnr-bubble:hover {
     vertical-align: middle;
 }
 
-/* --- 今日のひとことポップアップ用 --- */
+/* --- 今日のひとことポップアップ用（シンプル白抜き） --- */
 .social a .lnr-smile.bounce {
     animation: heartBounce 0.35s ease-in-out !important;
-    color: #FFB300 !important; /* 押した時に可愛い黄色・オレンジ系になります */
+    color: #888888 !important; /* 押した時もシックなグレーに */
 }
 
-/* ポップアップ吹き出しのスタイル */
+/* ポップアップ吹き出し（白抜き＆グレー枠） */
 .smile-pop-bubble {
     position: absolute;
-    bottom: 30px;
+    bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
     background: #ffffff;
     color: #444444;
-    border: 1.5px solid #FFB300;
-    padding: 6px 12px;
-    border-radius: 12px;
+    border: 1px solid #cccccc; /* タイトル背景になじむシンプルなグレー枠 */
+    padding: 5px 10px;
+    border-radius: 4px; /* 丸みを抑えたすっきりした形状 */
     font-size: 11px;
     white-space: nowrap;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06); /* 影もごく控えめに */
     pointer-events: none;
     z-index: 100;
     animation: smilePop 2s ease-out forwards;
 }
 
-/* 吹き出しの小さなシッポ（三角） */
+/* 吹き出しの三角形（枠線付き白抜き） */
+.smile-pop-bubble::before,
 .smile-pop-bubble::after {
     content: "";
     position: absolute;
-    top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 5px;
+    width: 0;
+    height: 0;
     border-style: solid;
-    border-color: #FFB300 transparent transparent transparent;
 }
 
+/* 三角の外枠（グレー） */
+.smile-pop-bubble::before {
+    top: 100%;
+    border-width: 5px 5px 0 5px;
+    border-color: #cccccc transparent transparent transparent;
+}
+
+/* 三角の内側（白で塗りつぶして枠線だけ見せる） */
+.smile-pop-bubble::after {
+    top: calc(100% - 1px);
+    border-width: 4px 4px 0 4px;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+/* ふわっと出て消えるアニメーション */
 @keyframes smilePop {
     0% {
         opacity: 0;
-        transform: translate(-50%, 10px) scale(0.8);
+        transform: translate(-50%, 6px);
     }
     15% {
         opacity: 1;
-        transform: translate(-50%, -5px) scale(1.05);
-    }
-    25% {
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, 0);
     }
     80% {
         opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, 0);
     }
     100% {
         opacity: 0;
-        transform: translate(-50%, -10px) scale(0.9);
+        transform: translate(-50%, -6px);
     }
 }
