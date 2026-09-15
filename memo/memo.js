@@ -23,14 +23,12 @@ const db = firebase.database();
 const memoPosts = [
     {
         id: "post-20260914",
-        title: "にこにこ",
         date: "2026.09.14",
         text: "下のアイコンを押すとなんかかわいくなる仕様にしてみました。スマイルマーク内のメッセージは気が向いたら変えます。",
         moreText: "",
     },
     {
         id: "post-20260914",
-        title: "隠居生活ふたたび",
         date: "2026.09.14",
         text: "SNSを見る時間が激減して快適です。",
         moreText: "",
@@ -41,7 +39,7 @@ const memoPosts = [
 // 2. 画面描画とページ送りの処理
 // ==========================================
 let currentPage = 1;
-const itemsPerPage = 5;
+const itemsPerPage = 10;
 
 $(function() {
     renderMemo();
@@ -80,7 +78,6 @@ function renderMemo() {
 
         const postHtml = `
             <section>
-                <h2>${post.title}</h2>
                 <p class="date">${post.date}</p>
                 <main>
                     <p>${post.text}</p>
