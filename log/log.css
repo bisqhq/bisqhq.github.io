@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Megrim');
+
+/* ①スクロールバーを常に表示 */
+html {
+    overflow-y: scroll;
+}
+
+@font-face {
+    font-family: '和田研中角ゴシック';
+    src: url('https://cdn.leafscape.be/wadalab/wadalab-nakakakugo_web.woff2') format("woff2");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    color: #555;
+    font-size: 12px;
+    font-family: 'Megrim', '和田研中角ゴシック', メイリオ, sans-serif;
+    line-height: 180%;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Megrim', '和田研中角ゴシック', メイリオ, sans-serif;
+    font-size: 20px;
+    margin: 50px 10px 30px;
+    font-weight: normal;
+}
+
+/* 記事内のタイトル・日付（Markdownの ##） */
+.log-item h2 {
+    font-family: 'Megrim', '和田研中角ゴシック', メイリオ, sans-serif;
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+    border-bottom: solid 2px #eee;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+a {
+    color: #507ea4;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    position: relative;
+    top: 0;
+    opacity: 0.8;
+}
+
+.wrp {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.top {
+    margin: 50px 20px 30px;
+    text-align: center;
+}
+
+/* 1記事の枠（指定デザインの背景） */
+.log-item {
+    margin: 20px 0 30px;
+    padding: 20px;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 5px, #eee 5px, #eee 6px);
+    border-radius: 20px;
+    word-break: break-all;
+}
+
+/* 記事内のリンク・タグ */
+.log-item a {
+    background: #fff;
+    border: solid 1px #fff;
+    padding: 5px 10px;
+    margin: 10px 3px 0;
+    border-radius: 10px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.log-item a:hover {
+    background: none;
+}    
+
+/* 記事内のリスト装飾 */
+.log-item ul, .log-item ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.ft {
+    text-align: center;
+    margin: 40px 20px 60px;
+}
+
+.ft a {
+    text-decoration: none;
+    padding: 2px 10px;
+    margin: 0 5px;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 5px, #eee 5px, #eee 6px);
+    display: inline-block;
+}
+
+.ft a:hover {
+    background: #fff;
+}
+
+.ft span {
+    text-decoration: line-through;
+    padding: 2px 10px;
+    margin: 0 5px;
+    color: #aaa;
+    display: inline-block;
+}
