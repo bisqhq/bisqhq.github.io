@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 検索避けメタタグ -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>LOG</title>
+    <link rel="stylesheet" href="log.css">
+    
+    <!-- jQuery ＆ Markdownパース用ライブラリ(marked) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="log.js" defer></script>
+</head>
+<body>
+
+    <div class="wrp">
+
+        <!-- ヘッダーエリア -->
+        <div class="top">
+            <h1>GRAY</h1>
+        </div>
+
+        <!-- JSが post/*.md を自動で読み込んでここに出力します -->
+        <div id="log-container"></div>
+
+        <!-- ページ送り（JSで10件ごとに全自動切り替え） -->
+        <div class="ft" id="pagination">
+            <span id="btn-prev">prev</span>
+            <a href="javascript:void(0);" id="btn-top">top</a>
+            <span id="btn-next">next</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
