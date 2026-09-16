@@ -123,3 +123,20 @@ a:hover {
     color: #aaa;
     display: inline-block;
 }
+
+/* 見出し全体 */
+.log-item h2 {
+    font-family: 'Megrim', '和田研中角ゴシック', メイリオ, sans-serif;
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+    border-bottom: solid 2px #eee;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* 日付部分だけの装飾（色や間隔など） */
+.log-item h2 .date {
+    margin-right: 12px;
+    color: #888;          /* 日付の色を少し薄くする場合 */
+    font-size: 0.9em;     /* 日付をほんの少し小さくする場合 */
+}
