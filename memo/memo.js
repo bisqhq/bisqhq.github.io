@@ -2,7 +2,7 @@
 // 0. Firebaseの初期化設定
 // ==========================================
 const firebaseConfig = {
-    apiKey: "AIzaSyC0TzyHi5D7yzpwy8mMXWAAv6eRPoVcjDs",
+    apiKey: "AIzaSyD9akRIqeCSudPy1x4KpkKZAh1u6fKrKzI",
     authDomain: "memo-clap.firebaseapp.com",
     databaseURL: "https://memo-clap-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "memo-clap",
