@@ -4,16 +4,44 @@ $(function() {
     let currentPage = 1;
     let totalPages = 1;
 
+    // ★URLからパラメータ（例: ?post=01.md）を取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const singlePost = urlParams.get('post');
+
     // 1. 記事リスト(posts.json)の読み込み
     $.getJSON('post/posts.json', function(data) {
         postFiles = data;
         totalPages = Math.ceil(postFiles.length / itemsPerPage);
         
-        // 1ページ目を描画
-        loadPage(1);
+        // ★ ?post=ファイル名 が指定されている場合は単独表示、無ければ通常表示
+        if (singlePost) {
+            loadSinglePost(singlePost);
+        } else {
+            loadPage(1);
+        }
     }).fail(function() {
         $('#log-container').html('<p style="text-align:center;">記事リスト(post/posts.json)が読み込めませんでした。</p>');
     });
+
+    // ★【追加】指定された1記事だけを取得して表示する関数
+    function loadSinglePost(filename) {
+        const container = $('#log-container');
+        container.empty().append('<p style="text-align:center; color:#888;">Loading...</p>');
+
+        $.get(`post/${filename}`).done(function(markdownContent) {
+            container.empty();
+            const htmlContent = marked.parse(markdownContent);
+            const $postBox =$('<div class="log-item"></div>').html(htmlContent);
+            container.append($postBox);
+
+            // フッターのページ送り表示を「一覧へ戻る(log)」に変更
+            $('#pagination').html('<a href="log.html">back to log</a>');
+
+        }).fail(function() {
+            container.html('<p style="text-align:center;">指定された記事が見つかりませんでした。</p>');
+            $('#pagination').html('<a href="log.html">back to log</a>');
+        });
+    }
 
     // 2. 指定ページのMarkdown記事を取得して描画する関数
     function loadPage(page) {
@@ -46,7 +74,7 @@ $(function() {
                 // markedライブラリを使ってMarkdownをHTML化
                 const htmlContent = marked.parse(markdownContent);
 
-                const $postBox = $('<div class="log-item"></div>').html(htmlContent);
+                const $postBox =$('<div class="log-item"></div>').html(htmlContent);
                 container.append($postBox);
             });
 
