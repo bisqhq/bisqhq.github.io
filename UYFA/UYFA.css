@@ -301,6 +301,32 @@ html {
     scrollbar-color: #0E1E40 #fff; /* つまみの色(ネイビー) 背景色(白) */
     scrollbar-width: thin; /* 細めにする */
 }
+/* --- スクロールバーのカスタマイズ --- */
+
+/* 1. Chrome, Safari, Edge用 */
+::-webkit-scrollbar {
+    width: 8px; /* スクロールバーの太さ */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important; /* ★背景を透明にしてグラデーションを透けさせる */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0E1E40 !important; /* つまみの色（ネイビー） */
+    border-radius: 4px; /* 角を丸くする */
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+    background: #0E1E40 !important; /* ホバー時もネイビー（色変化なし） */
+}
+
+/* 2. Firefox用 */
+html {
+    scrollbar-color: #0E1E40 transparent; /* ★背景色を透明に変更 */
+    scrollbar-width: thin; /* 細めにする */
+}
 
 /* 外枠だけの角丸ボタンデザイン */
 .booth-btn {
