@@ -218,9 +218,3 @@ html {
     letter-spacing: 0.1em;        /* 文字間隔 */
     transition: all 0.3s ease;    /* ホバー時のアニメーション */
 }
-
-/* マウスを乗せたとき（ホバー時）の背景反転効果 */
-.booth-btn:hover {
-    background-color: #f7dc8d;    /* 背景に色をつける */
-    color: #ffffff;               /* 文字を白にする */
-}
