@@ -283,13 +283,17 @@ rt {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0E1E40; /* ★つまみの色（ネイビーに変更） */
+    background: #0E1E40; /* ★つまみの色（ネイビー） */
     border-radius: 4px; /* 角を丸くする */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0E1E40; /* ★ホバー時も色を変えない */
 }
 
 /* 2. Firefox用 */
 html {
-    scrollbar-color: #0E1E40 #fff; /* ★つまみの色(ネイビー)  背景色(白) */
+    scrollbar-color: #0E1E40 #fff; /* つまみの色(ネイビー)  背景色(白) */
     scrollbar-width: thin; /* 細めにする */
 }
 
@@ -297,10 +301,17 @@ html {
 .booth-btn {
     display: inline-block;
     padding: 0.6em 2em;           /* ボタンの内側の余白 */
-    border: 1px solid #0E1E40;     /* ★外枠の線（ネイビーに変更） */
+    border: 1px solid #0E1E40;     /* 外枠の線（ネイビー） */
     border-radius: 20px;          /* 角丸の丸み具合 */
-    color: #0E1E40;               /* ★文字の色（ネイビーに変更） */
+    color: #0E1E40;               /* 文字の色（ネイビー） */
     text-decoration: none;        /* 下線を消す */
     font-size: 0.9em;             /* 文字の大きさ */
     letter-spacing: 0.1em;        /* 文字間隔 */
+}
+
+/* ★ホバーされても文字色や枠線の色を変えない（親要素a:hoverの干渉を防止） */
+.booth-btn:hover {
+    color: #0E1E40;
+    border-color: #0E1E40;
+    opacity: 1;
 }
