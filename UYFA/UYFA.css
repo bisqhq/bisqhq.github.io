@@ -279,16 +279,18 @@ rt {
 }
 
 ::-webkit-scrollbar-track {
-    background: #fff; /* スクロールバーの背景色 */
+    background: #fff !important; /* スクロールバーの背景色（白） */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0E1E40; /* ★つまみの色（ネイビー） */
+    background: #0E1E40 !important; /* つまみの色（ネイビー） */
     border-radius: 4px; /* 角を丸くする */
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #0E1E40; /* ★ホバー時も色を変えない */
+/* ★マウスを載せたとき（hover）やクリックしたとき（active）も強制的にネイビーのまま固定 */
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+    background: #0E1E40 !important;
 }
 
 /* 2. Firefox用 */
@@ -307,11 +309,4 @@ html {
     text-decoration: none;        /* 下線を消す */
     font-size: 0.9em;             /* 文字の大きさ */
     letter-spacing: 0.1em;        /* 文字間隔 */
-}
-
-/* ★ホバーされても文字色や枠線の色を変えない（親要素a:hoverの干渉を防止） */
-.booth-btn:hover {
-    color: #0E1E40;
-    border-color: #0E1E40;
-    opacity: 1;
 }
