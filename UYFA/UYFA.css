@@ -273,44 +273,57 @@ rt {
 
 /* --- スクロールバーのカスタマイズ --- */
 
-/* 1. 全体領域の透過処理 */
-::-webkit-scrollbar {
-    width: 10px; /* 矢印が見やすいよう少し太さを調整（8px→10px） */
-    background-color: transparent !important;
+/* 1. 標準設定の干渉をクリア */
+html {
+    scrollbar-color: auto;
 }
 
-/* 2. レール（トラック）部分 */
-::-webkit-scrollbar-track {
-    background-color: transparent !important;
+/* 2. スクロールバー全体領域 */
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent !important;
+}
+
+/* 3. トラック（背景・通り道） */
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    background: transparent !important;
     box-shadow: none !important;
 }
 
-/* 3. つまみ部分 */
+/* 4. つまみ部分 */
 ::-webkit-scrollbar-thumb {
     background-color: #0E1E40 !important; /* ネイビー */
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #0E1E40 !important; /* ホバー時も維持 */
+    background-color: #0E1E40 !important; /* ホバー時も同じ色 */
 }
 
-/* 4. 上下の三角ボタン（矢印）の表示 */
+/* 5. 上下の三角ボタン（1つずつのみ表示させる設定） */
 ::-webkit-scrollbar-button {
-    display: block;
+    display: none; /* 基本は非表示 */
+}
+
+/* 上矢印（▲）: 単一ボタンのみ指定 */
+::-webkit-scrollbar-button:vertical:decrement:single-button {
+    display: block !important;
     height: 12px;
-    background-color: transparent;
+    background-color: transparent !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 6px;
-}
-
-/* 上矢印（▲） */
-::-webkit-scrollbar-button:vertical:decrement {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,2 0,8 10,8" fill="%230E1E40"/></svg>');
 }
 
-/* 下矢印（▼） */
-::-webkit-scrollbar-button:vertical:increment {
+/* 下矢印（▼）: 単一ボタンのみ指定 */
+::-webkit-scrollbar-button:vertical:increment:single-button {
+    display: block !important;
+    height: 12px;
+    background-color: transparent !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 6px;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="0,2 10,2 5,8" fill="%230E1E40"/></svg>');
 }
