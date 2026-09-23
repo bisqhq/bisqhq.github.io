@@ -277,65 +277,32 @@ rt {
 
 /* --- スクロールバーのカスタマイズ --- */
 
-/* 1. Chrome, Safari, Edge用 */
+/* Chrome / Safari / Edge */
 ::-webkit-scrollbar {
-    width: 8px; /* スクロールバーの太さ */
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #fff !important; /* スクロールバーの背景色 */
+    background: linear-gradient(
+        40deg,
+        rgba(49, 64, 95, 1) 24%,
+        rgba(227, 176, 198, 1)
+    );
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0E1E40 !important; /* ★つまみの色（ネイビー） */
-    border-radius: 4px; /* 角を丸くする */
+    background: #0E1E40;
+    border-radius: 4px;
 }
 
+/* ホバー・クリックしても色を変えない */
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-    background: #0E1E40 !important; /* ★ホバー時も同じネイビー（色変化なし） */
+    background: #0E1E40;
 }
 
-/* 2. Firefox用 */
+/* Firefox */
 html {
-    scrollbar-color: #0E1E40 #fff; /* つまみの色(ネイビー) 背景色(白) */
-    scrollbar-width: thin; /* 細めにする */
-}
-/* --- スクロールバーのカスタマイズ --- */
-
-/* 1. Chrome, Safari, Edge用 */
-::-webkit-scrollbar {
-    width: 8px; /* スクロールバーの太さ */
-}
-
-::-webkit-scrollbar-track {
-    background: transparent !important; /* ★背景を透明にしてグラデーションを透けさせる */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #0E1E40 !important; /* つまみの色（ネイビー） */
-    border-radius: 4px; /* 角を丸くする */
-}
-
-::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:active {
-    background: #0E1E40 !important; /* ホバー時もネイビー（色変化なし） */
-}
-
-/* 2. Firefox用 */
-html {
-    scrollbar-color: #0E1E40 transparent; /* ★背景色を透明に変更 */
-    scrollbar-width: thin; /* 細めにする */
-}
-
-/* 外枠だけの角丸ボタンデザイン */
-.booth-btn {
-    display: inline-block;
-    padding: 0.6em 2em;           /* ボタンの内側の余白 */
-    border: 1px solid #0E1E40;     /* 外枠の線（ネイビー） */
-    border-radius: 20px;          /* 角丸の丸み具合 */
-    color: #0E1E40;               /* 文字の色（ネイビー） */
-    text-decoration: none;        /* 下線を消す */
-    font-size: 0.9em;             /* 文字の大きさ */
-    letter-spacing: 0.1em;        /* 文字間隔 */
+    scrollbar-color: #0E1E40 transparent;
+    scrollbar-width: thin;
 }
