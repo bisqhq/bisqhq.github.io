@@ -1,274 +1,189 @@
-/* 
-メモ：★印のついていない箇所の色は変えないことをおすすめします。
-「mix-blend-mode: overlay;」の記載がある箇所の色を変更すると、
-正しく色が反映されず文字が読みにくくなる場合があります。
- */
+@charset "UTF-8";
 
-/* フォントの読み込み */
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Shippori+Mincho+B1:wght@400;500&display=swap');
 
 html {
     overflow-y: scroll; /* 短いページでも常にスクロールバーの領域を確保する */
-    overflow-x: hidden;
 }
 
-/* 全体設定 */
-*{
-font-family: 'Shippori Mincho', serif;
-color: #FFF;/* 全体の文字色 */
-font-size: 12px;
-font-weight: 400;
-letter-spacing: 0.1em;
-line-height: 1.9em;
-box-sizing: border-box;
-padding: 0;
-margin: 0;
-list-style-type: none;
-text-decoration:none;
+body {
+    background: #fff;
+    color: #333;
+    font-size: 11px;
+    font-family:
+    'Crimson Text',
+    'Shippori Mincho B1',
+    'STHeitiSC-Light',
+    'Microsoft YaHei',
+    gulim,
+    メイリオ,
+    serif;
+    line-height: 180%;
+    letter-spacing: 1px;
+    margin: 0;
 }
 
-body:before{
-background-image: linear-gradient(40deg, rgba(49, 64, 95, 1) 24%, rgba(227, 176, 198, 1));/* ★背景のグラデーション色 */
-background-size: cover;
-content: "";
-display: block;
-position: fixed;
-top: 0;
-left: 0;
-z-index: -99;
-width: 100%;
-height: 100vh;
+a {
+    color: #f08300;
+    text-decoration: underline;
 }
 
-body{
-overflow-x: hidden;
+/* ★文法エラーを修正（active → a:active） */
+a:hover, a:active {
+    position: relative;
+    top: 0;
+    color: #333;
+    text-decoration: none;
 }
 
-.wrap{
-max-width: 500px;
-height: auto;
-padding: 0 40px;
-overflow: hidden;
-margin: 0 auto 30px;
+h1,h2 {
+    font-family:'Crimson Text','Shippori Mincho B1', 'STHeitiSC-Light', 'Microsoft YaHei', gulim, メイリオ, sans-serif;
+    font-size: 14px;
+    margin: 20px 0 5px;
 }
 
-/* リンク文字 */
-a{
-border-bottom: 1px solid rgba(255,255,255,0.4);/* ★リンク文字の下線の色 */
-transition: 0.2s;
+h2 {
+    font-size: 12px;
+    margin: 10px 0;
+    padding: 0 3px;
+    display: inline-block;
+    border-bottom: solid 2px #0E1E40; /* ★ネイビーに変更 */
 }
 
-a:hover{
-color: rgba(255,255,255,0.4);/* ★リンクをホバーした時の文字色 */
+hr {
+    border: none;
+    border-top: solid 1px #eee;
+    margin:15px 0;
 }
 
-/* 強調文 */
-strong{
-font-weight: 600;
-border-bottom: 2px solid #FFF;/* ★強調文の下線の色 */
+.wrp {
+    max-width: 500px;
+    margin: 50px auto 10px;
 }
 
-/* サイトタイトル */
-.top{
-width: 100%;
-height: 400px;
-margin-top: 60px;
-position: relative;
+.top {
+    margin: 0 20px;
+    font-size:12px;
 }
 
-.image{
-width: 250px;
-height: 400px;
-outline: 10px solid rgba(255,255,255,0.1);/* ★画像の枠線 */
-background-image: url(UYFA.jpg);/* ★TOP画像のURL */
-background-size: cover;
-background-repeat: no-repeat;
-top: 0;
-right: 10px;
-position: absolute;
-z-index:-1;
+.menu a,.menu p{
+    display: inline-block;
+    margin-right:10px;
 }
 
-.title{
-width: 270px;
-height: auto;
-bottom: 40px;
-left: 0;
-position: absolute;
-z-index: 99;
+.menu p {
+    font-weight: 700;
 }
 
-.dream{
-padding-top: 20px;
+.info,.main {
+    margin: 5px 20px 30px;
+    padding: 15px;
+    border: solid 2px #eee;
+    border-radius: 5px;
+    position: relative;
 }
 
-.dream a{
-border-bottom: none;
-background-color: #0E1E40;/* ★名前変換ボタンの背景色 */
-padding: 0 4px 2px;
-margin-right: 10px;
-font-size: 13px;
+.info::before,.main::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: 20px;
+    top: -15px;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #eee;
+    border-left: 15px solid transparent;
 }
 
-.dream a:hover{
-background-color: #985F7C;/* ★名前変換ボタンをホバーした時の背景色 */
-color: #FFF;
+.info::after,.main::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: 20px;
+    top: -12px;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #fff;
+    border-left: 15px solid transparent;
 }
 
-/* 見出し */
-h1{
-font-size: 28px;
-letter-spacing: 0.2em;
-padding-bottom: 20px;
+.text {
+    margin: 5px 20px 30px;
+    padding: 15px;
+    border: solid 2px #eee;
+    border-radius: 5px;
 }
 
-h2{
-font-size: 14px;
-font-weight: 600;
-padding-bottom: 5px;
+.info::before,
+.info::after {
+    left: 0px;
 }
 
-h3{
-font-size: 15px;
-padding-bottom: 20px;
+.main::before,
+.main::after {
+    left: 50px;
 }
 
-/* 章 */
-main{
-width: 100%;
-margin-top: 50px;
+.main p {
+    padding-left: 10px;
+    color: #888;
+    display: table-cell;
 }
 
-.chapter+.chapter{
-padding-top: 40px;
+.sec {
+    display: table-cell;
+    width: 100px;
 }
 
-.chapter a{
-margin-right: 8px;
+.ft {
+    margin:0 20px 30px;
+    text-align: right;
 }
 
-.back{
-margin-top: 50px;
+input[type], textarea {
+    height: 80px;
+    width: 95%;
+    font-size: 11px;
+    font-family:
+    'Crimson Text',
+    'Shippori Mincho B1',
+    'STHeitiSC-Light',
+    'Microsoft YaHei',
+    gulim,
+    メイリオ,
+    serif;
+    line-height: 180%;
+    letter-spacing: 2px;
+    color: #333;
+    background: #eee;
+    border: solid 1px #fff;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    box-shadow: none;
+    margin: 3px 0;
+    padding: 3px;
 }
 
-/* 名前変換フォーム */
-.name{
-width: 100%;
-margin: 80px auto;
-padding: 30px;
-background-color: rgba(0,0,0,0.1);/* 名前変換の背景色 */
-mix-blend-mode: overlay;/* 背景にかけるオーバーレイ */
+input[type=text ]{
+    height: auto;
+    width: 80px;
 }
 
-form{
-padding-top: 20px;
+input[type=submit]{
+    height: auto;
+    width: 50px;
+    cursor: pointer;
+    text-shadow: none;
+    background: #0E1E40; /* ★ネイビーに変更 */
+    color: #fff; /* 文字を見やすく白に変更 */
+    font-weight: 200;
 }
 
-input[type="text"],input[type="submit"]{
--webkit-appearance: none;
--moz-appearance: none;
--webkit-box-shadow: none;
-appearance: none;
-box-shadow: none;
-background: transparent;/* 入力フォームの背景色 */
-border-radius: 0;
-border: 1px solid #FFF;/* 入力フォームの枠線の色 */
-height:30px;
-width: 6em;
-margin: 0 8px 0 0;
-padding: 2px 5px 1px;
-line-height: normal;
-}
-
-input:focus{
-outline: none;
-height:30px;
-}
-
-input[type="submit"]{
-width: auto;
-background-color: #FFF;
-border: none;
-color: #262626;/* OKボタンの文字色 */
-font-size: 11px;
-padding: 0 10px;
-cursor: pointer;
-line-height: normal;
-transition: 0.2s;
-}
-
-input[type="submit"]:hover{
-opacity: 0.6;
-}
-
-/* 小説本文 */
-.novel-wrap{
-max-width: 700px;
-padding: 0 30px;
-margin: 0 auto;
-}
-
-.novel{
-width: 100%;
-min-height: 100vh;
-background-color: rgba(0,0,0,0.1);/* 本文の背景色 */
-mix-blend-mode: overlay;/* 本文の背景にかけるオーバーレイ */
-padding: 60px 80px;
-margin-top: 0;
-}
-
-.text{
-margin: 0 auto;
-line-height: 2.0em;
-font-size: 13px;
-white-space: pre-wrap; /* ★HTML内の改行をそのまま本文に反映させる設定 */
-}
-
-.page{
-text-align: center;
-width: 100%;
-padding-top: 70px;
-}
-
-/* フッター */
-footer{
-margin: 50px auto 0;
-font-size: 10px;
-opacity: 0.6;
-text-align: center;
-}
-
-/* 500px以下のデバイスでの見え方 */
-@media screen and (max-width: 500px) {
-h1{
-font-size: 24px;
-}
-
-.image{
-width: 160px;
-right: 10px;
-}
-
-.title{
-width: 220px;
-}
-
-.novel-wrap{
-padding: 0 15px;
-}
-
-.novel{
-padding: 40px 25px;
-}
-}
-
-.kenten {
-    text-emphasis: filled sesame;
-    -webkit-text-emphasis: filled sesame;
-}
-
-rt {
-    font-size: 60%;
+/* すべての要素の幅と余白の計算をきれいに統一する */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 /* --- スクロールバーのカスタマイズ --- */
@@ -287,7 +202,7 @@ rt {
     border-radius: 4px; /* 角を丸くする */
 }
 
-/* ★マウスを載せたとき（hover）やクリックしたとき（active）も強制的にネイビーのまま固定 */
+/* ホバー時もネイビーのまま固定 */
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
     background: #0E1E40 !important;
@@ -303,9 +218,9 @@ html {
 .booth-btn {
     display: inline-block;
     padding: 0.6em 2em;           /* ボタンの内側の余白 */
-    border: 1px solid #0E1E40;     /* 外枠の線（ネイビー） */
+    border: 1px solid #0E1E40;     /* ★ネイビーに変更 */
     border-radius: 20px;          /* 角丸の丸み具合 */
-    color: #0E1E40;               /* 文字の色（ネイビー） */
+    color: #0E1E40;               /* ★ネイビーに変更 */
     text-decoration: none;        /* 下線を消す */
     font-size: 0.9em;             /* 文字の大きさ */
     letter-spacing: 0.1em;        /* 文字間隔 */
