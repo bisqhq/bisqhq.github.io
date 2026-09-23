@@ -278,16 +278,20 @@ rt {
 }
 
 ::-webkit-scrollbar-track {
-    background: #fff; /* スクロールバーの背景色 */
+    background: rgba(49, 64, 95, 0.4); /* ★スクロールバーの背景色（背景の紺色に合わせた半透明） */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #f7dc8d; /* つまみの色（サイトのアクセントカラーに合わせました） */
+    background: #985F7C; /* ★つまみの色（名前変換ホバー時のアクセントカラー） */
     border-radius: 4px; /* 角を丸くする */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e3b0c8; /* ★つまみをホバーした時の色 */
 }
 
 /* 2. Firefox用 */
 html {
-    scrollbar-color: #f7dc8d #fff; /* つまみの色  背景色 */
+    scrollbar-color: #985F7C rgba(49, 64, 95, 0.4); /* つまみの色 背景色 */
     scrollbar-width: thin; /* 細めにする */
 }
