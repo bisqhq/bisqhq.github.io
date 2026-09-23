@@ -11,13 +11,13 @@ body {
     color: #333;
     font-size: 11px;
     font-family:
-    'Crimson Text',
-    'Shippori Mincho B1',
-    'STHeitiSC-Light',
-    'Microsoft YaHei',
-    gulim,
-    メイリオ,
-    serif;
+'Crimson Text',
+'Shippori Mincho B1',
+'STHeitiSC-Light',
+'Microsoft YaHei',
+gulim,
+メイリオ,
+serif;
     line-height: 180%;
     letter-spacing: 1px;
     margin: 0;
@@ -28,7 +28,7 @@ a {
     text-decoration: underline;
 }
 
-/* ★文法エラーを修正（active → a:active） */
+/* ★文法エラーのみ修正（active → a:active） */
 a:hover, a:active {
     position: relative;
     top: 0;
@@ -47,7 +47,7 @@ h2 {
     margin: 10px 0;
     padding: 0 3px;
     display: inline-block;
-    border-bottom: solid 2px #0E1E40; /* ★ネイビーに変更 */
+    border-bottom: solid 2px #f7dc8d;
 }
 
 hr {
@@ -176,8 +176,7 @@ input[type=submit]{
     width: 50px;
     cursor: pointer;
     text-shadow: none;
-    background: #0E1E40; /* ★ネイビーに変更 */
-    color: #fff; /* 文字を見やすく白に変更 */
+    background: #f7dc8d;
     font-weight: 200;
 }
 
@@ -194,23 +193,22 @@ input[type=submit]{
 }
 
 ::-webkit-scrollbar-track {
-    background: #fff !important; /* スクロールバーの背景色（白） */
+    background: #fff !important; /* スクロールバーの背景色 */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0E1E40 !important; /* つまみの色（ネイビー） */
+    background: #0E1E40 !important; /* ★つまみの色（ネイビー） */
     border-radius: 4px; /* 角を丸くする */
 }
 
-/* ホバー時もネイビーのまま固定 */
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-    background: #0E1E40 !important;
+    background: #0E1E40 !important; /* ★ホバー時も同じネイビー（色変化なし） */
 }
 
 /* 2. Firefox用 */
 html {
-    scrollbar-color: #0E1E40 #fff; /* つまみの色(ネイビー)  背景色(白) */
+    scrollbar-color: #0E1E40 #fff; /* つまみの色(ネイビー) 背景色(白) */
     scrollbar-width: thin; /* 細めにする */
 }
 
@@ -218,9 +216,9 @@ html {
 .booth-btn {
     display: inline-block;
     padding: 0.6em 2em;           /* ボタンの内側の余白 */
-    border: 1px solid #0E1E40;     /* ★ネイビーに変更 */
+    border: 1px solid #0E1E40;     /* 外枠の線（ネイビー） */
     border-radius: 20px;          /* 角丸の丸み具合 */
-    color: #0E1E40;               /* ★ネイビーに変更 */
+    color: #0E1E40;               /* 文字の色（ネイビー） */
     text-decoration: none;        /* 下線を消す */
     font-size: 0.9em;             /* 文字の大きさ */
     letter-spacing: 0.1em;        /* 文字間隔 */
