@@ -7,6 +7,10 @@
 /* フォントの読み込み */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap');
 
+html {
+    overflow-y: scroll; /* 短いページでも常にスクロールバーの領域を確保する */
+}
+
 /* 全体設定 */
 *{
 font-family: 'Shippori Mincho', serif;
