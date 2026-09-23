@@ -295,7 +295,6 @@ rt {
     border-radius: 4px;
 }
 
-/* ホバー・クリックしても色を変えない */
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
     background: #0E1E40;
