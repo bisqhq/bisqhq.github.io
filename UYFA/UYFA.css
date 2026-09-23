@@ -275,33 +275,14 @@ rt {
     box-sizing: border-box;
 }
 
-/* --- スクロールバーのカスタマイズ --- */
-
-/* Chrome / Safari / Edge */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 20px;
 }
 
 ::-webkit-scrollbar-track {
-    background: linear-gradient(
-        40deg,
-        rgba(49, 64, 95, 1) 24%,
-        rgba(227, 176, 198, 1)
-    );
+    background: red !important;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0E1E40;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:active {
-    background: #0E1E40;
-}
-
-/* Firefox */
-html {
-    scrollbar-color: #0E1E40 transparent;
-    scrollbar-width: thin;
+    background: blue !important;
 }
