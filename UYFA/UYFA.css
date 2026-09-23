@@ -81,7 +81,7 @@ position: relative;
 width: 250px;
 height: 400px;
 outline: 10px solid rgba(255,255,255,0.1);/* ★画像の枠線 */
-background-image: url(#mtr11_url#);/* ★TOP画像のURL */
+background-image: url(UYFA.jpg);/* ★TOP画像のURL */
 background-size: cover;
 background-repeat: no-repeat;
 top: 0;
