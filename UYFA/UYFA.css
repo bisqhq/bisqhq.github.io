@@ -9,6 +9,7 @@
 
 html {
     overflow-y: scroll; /* 短いページでも常にスクロールバーの領域を確保する */
+    overflow-x: hidden;
 }
 
 /* 全体設定 */
@@ -220,6 +221,7 @@ margin-top: 0;
 margin: 0 auto;
 line-height: 2.0em;
 font-size: 13px;
+white-space: pre-wrap; /* ★HTML内の改行をそのまま本文に反映させる設定 */
 }
 
 .page{
@@ -271,26 +273,27 @@ rt {
 
 /* --- スクロールバーのカスタマイズ --- */
 
-/* 1. Chrome, Safari, Edge用 */
+/* Firefox標準の自動干渉を解除 */
+html {
+    scrollbar-color: auto;
+}
+
+/* Chrome, Safari, Edge用の全設定 */
 ::-webkit-scrollbar {
     width: 8px; /* スクロールバーの太さ */
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent; /* ★スクロールバーの背景を完全に透明にして元のグラデーションを活かす */
+    background: transparent !important; /* 背景を完全に透明化 */
+    box-shadow: none !important;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0E1E40; /* ★つまみの色（ネイビー） */
-    border-radius: 4px; /* 角を丸くする */
+    background-color: #0E1E40 !important; /* つまみの色（ネイビー） */
+    border-radius: 4px;
+    border: none !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0E1E40; /* ★ホバー時も同じネイビーを維持（色変化なし） */
-}
-
-/* 2. Firefox用 */
-html {
-    scrollbar-color: #0E1E40 transparent; /* つまみの色(ネイビー) 背景色(透明) */
-    scrollbar-width: thin; /* 細めにする */
+    background-color: #0E1E40 !important; /* ホバー時も同じ色を強制固定 */
 }
