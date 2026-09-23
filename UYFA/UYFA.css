@@ -273,26 +273,24 @@ rt {
 
 /* 1. Chrome, Safari, Edge用 */
 ::-webkit-scrollbar {
-    width: 8px; /* 縦スクロールバーの太さ */
-    height: 0px; /* ★横スクロールバーを非表示（念のため） */
+    width: 8px; /* スクロールバーの太さ */
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.15); /* ★スクロールバーの背景色（半透明の白で馴染ませる） */
+    background: transparent; /* ★スクロールバーの背景を完全に透明にして元のグラデーションを活かす */
 }
 
 ::-webkit-scrollbar-thumb {
     background: #0E1E40; /* ★つまみの色（ネイビー） */
     border-radius: 4px; /* 角を丸くする */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* 線を入れて視認性を少しアップ */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #31405F; /* ★つまみをホバーした時の色（少し明るいグラデーション系の紺） */
+    background: #0E1E40; /* ★ホバー時も同じネイビーを維持（色変化なし） */
 }
 
 /* 2. Firefox用 */
 html {
-    scrollbar-color: #0E1E40 rgba(255, 255, 255, 0.15); /* つまみの色 背景色 */
+    scrollbar-color: #0E1E40 transparent; /* つまみの色(ネイビー) 背景色(透明) */
     scrollbar-width: thin; /* 細めにする */
 }
