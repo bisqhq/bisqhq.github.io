@@ -25,7 +25,7 @@ const memoPosts = [
         id: "post-20260926",
         date: "2026.09.26",
         text: "あまりにもブルスカにいるので追記にリンクしておきます。",
-        moreText: "<a href="https://bsky.app/profile/sankaq.bsky.social">こちら</a>にいます。9割自我ですので悪しからず。",
+        moreText: "",
     },
     {
         id: "post-20260922",
