@@ -76,7 +76,23 @@
         </div>
     </div>
 </div><!-- /.wrp -->
+    
+<!-- ▼ 画像拡大モーダル -->
+<div id="imageModal" class="image-modal"
+     role="dialog" aria-modal="true"
+     aria-label="画像の拡大表示"
+     aria-hidden="true">
 
+    <button type="button" class="modal-close"
+            onclick="closeImage()"
+            aria-label="閉じる">
+        ×
+    </button>
+
+    <img id="modalImage" src="" alt="">
+</div>
+<!-- ▲ 画像拡大モーダル -->
+    
 <script>
     function checkPassword() {
         const input = document.getElementById('passInput').value;
@@ -132,22 +148,6 @@ document.getElementById('imageModal').addEventListener('click', function(event) 
     }
 });
 </script>
-
-<!-- ▼ 画像拡大モーダル -->
-<div id="imageModal" class="image-modal"
-     role="dialog" aria-modal="true"
-     aria-label="画像の拡大表示"
-     aria-hidden="true">
-
-    <button type="button" class="modal-close"
-            onclick="closeImage()"
-            aria-label="閉じる">
-        ×
-    </button>
-
-    <img id="modalImage" src="" alt="">
-</div>
-<!-- ▲ 画像拡大モーダル -->
 
 </body>
 </html>
