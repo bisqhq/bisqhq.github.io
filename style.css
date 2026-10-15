@@ -316,62 +316,58 @@ html {
   position: relative;
 }
 
+
 /* 説明文の初期状態 */
 .image-caption {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px;
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.55);
-  color: white;
-  font-size: 11px;
-  line-height: 1.5;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
 }
 
-/* マウスを乗せたときに表示 */
+/* PC：マウスを乗せたときに表示 */
 .gallery-item:hover .image-caption {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* スマホでは説明文をサムネイルの下に表示 */
-
 @media (max-width: 600px) {
-  .gallery-item {
-    width: 140px;
-    height: auto;
-    flex: 0 0 140px;
-    overflow: visible;
-    background: transparent;
-  }
+    .gallery-item {
+        width: 140px;
+        height: auto;
+        flex: 0 0 140px;
+        overflow: visible;
+        background: transparent;
+    }
 
-  .gallery-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border: none;
-    outline: none;
-    box-shadow: none;
-  }
-}
-  }
+    .gallery-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
 
-  .image-caption {
-    position: static;
-    display: block;
-    opacity: 1;
-    background: transparent;
-    color: #000;
-    font-size: 11px;
-    padding: 5px 0 0;
-    text-align: center;
-  }
+    .image-caption {
+        position: static;
+        display: block;
+        opacity: 1;
+        background: transparent;
+        color: #000;
+        font-size: 11px;
+        line-height: 1.5;
+        padding: 5px 0 0;
+        text-align: center;
+    }
 }
