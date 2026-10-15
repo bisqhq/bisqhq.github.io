@@ -310,3 +310,32 @@ html {
     outline: 2px solid #f7dc8d;
     outline-offset: 3px;
 }
+
+
+.gallery-item {
+  position: relative;
+}
+
+/* 説明文の初期状態 */
+.image-caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* マウスを乗せたときに表示 */
+.gallery-item:hover .image-caption {
+  opacity: 1;
+}
