@@ -89,6 +89,48 @@
             document.getElementById('errorMsg').style.display = 'block';
         }
     }
+
+// 画像を拡大表示する
+function openImage(src, alt) {
+    const modal = document.getElementById('imageModal');
+    const image = document.getElementById('modalImage');
+
+    image.src = src;
+    image.alt = alt;
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+
+    document.body.style.overflow = 'hidden';
+
+    modal.querySelector('.modal-close').focus();
+}
+
+// 画像拡大を閉じる
+function closeImage() {
+    const modal = document.getElementById('imageModal');
+
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+
+    document.body.style.overflow = '';
+
+    document.getElementById('modalImage').src = '';
+}
+
+// Escキーでも閉じられるようにする
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImage();
+    }
+});
+
+// 画像の外側をクリックしても閉じる
+document.getElementById('imageModal').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeImage();
+    }
+});
 </script>
 
 <!-- ▼ 画像拡大モーダル -->
