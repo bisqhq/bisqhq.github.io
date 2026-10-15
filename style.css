@@ -341,9 +341,12 @@ html {
 }
 
 /* スマホでは説明文をサムネイルの下に表示 */
+
 @media (max-width: 600px) {
   .gallery-item {
+    width: 140px;
     height: auto;
+    flex: 0 0 140px;
     overflow: visible;
     background: transparent;
   }
@@ -351,8 +354,9 @@ html {
   .gallery-item img {
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;
     height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
 
   .image-caption {
@@ -360,7 +364,7 @@ html {
     display: block;
     opacity: 1;
     background: transparent;
-    color: inherit;
+    color: #000;
     font-size: 11px;
     padding: 5px 0 0;
     text-align: center;
