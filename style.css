@@ -339,3 +339,30 @@ html {
 .gallery-item:hover .image-caption {
   opacity: 1;
 }
+
+/* スマホでは説明文をサムネイルの下に表示 */
+@media (max-width: 600px) {
+  .gallery-item {
+    height: auto;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
+  .image-caption {
+    position: static;
+    display: block;
+    opacity: 1;
+    background: transparent;
+    color: inherit;
+    font-size: 11px;
+    padding: 5px 0 0;
+    text-align: center;
+  }
+}
