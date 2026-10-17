@@ -343,6 +343,10 @@ html {
 
 /* スマホでは説明文をサムネイルの下に表示 */
 @media (max-width: 600px) {
+    .event-gallery {
+        flex-wrap: wrap;
+    }
+
     .gallery-item {
         width: 140px;
         height: auto;
@@ -370,13 +374,4 @@ html {
         padding: 5px 0 0;
         text-align: center;
     }
-}
-
-.event-gallery {
-    flex-wrap: wrap;
-}
-
-.gallery-item {
-    width: 140px;
-    flex: 0 0 140px;
 }
