@@ -22,6 +22,12 @@ const db = firebase.database();
 // ==========================================
 const memoPosts = [
     {
+        id: "post-20261107",
+        date: "2026.11.07",
+        text: "一定の周期でソリティアにはまる人生です",
+        moreText: "",
+    },
+    {
         id: "post-20261029",
         date: "2026.10.29",
         text: "ぼやき",
