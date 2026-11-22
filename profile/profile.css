@@ -1,4 +1,3 @@
-<style>
 @charset "UTF-8";
 
 /* ウェブフォントの読み込み */
@@ -158,4 +157,3 @@ section > p{
     border: thin solid var(--color3);
     font-size: 12px;
 }
-</style>
