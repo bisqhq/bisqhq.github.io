@@ -1,0 +1,161 @@
+<style>
+@charset "UTF-8";
+
+/* ウェブフォントの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Great+Vibes&family=Zen+Maru+Gothic&display=swap');
+
+/* 全体に適用する */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+/* root */
+:root {
+    --color: #8794bf;
+    --color2: #fbded5;
+    --color3: #c09cbc;
+    --gray: #efefef;
+    --white: #ffffff;
+    --black: #222;
+    --en-font1: "Great Vibes", cursive;
+    --en-font2: "EB Garamond", "Zen Maru Gothic", serif;
+}
+
+/* 基本設定 */
+body {
+    background-color: var(--white);
+    text-align: left;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    font-family: "Zen Maru Gothic", serif;
+    color: var(--black);
+}
+
+/* 背景 */
+body::before {
+    position: fixed;
+    display: block;
+    content: '';
+    z-index: -999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--color) 0, var(--color) 50%, var(--color2) 50%, var(--color2) 100%);
+}
+
+/* 横幅768px以上で読み込む */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* 横幅1024px以上で読み込む */
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+/* リンク */
+a {
+    text-decoration: none;
+    color: var(--color3);
+    transition: .5s all;
+}
+
+a:visited {
+    color: var(--color3);
+}
+
+a:hover,
+a:visited:hover {
+    color: var(--gray);
+}
+
+/* ヘッダー */
+header {
+    margin: 1.5em auto 0;
+    text-align: center;
+}
+
+/* 見出し */
+header h1 {
+    display: inline-block;
+    position: relative;
+}
+
+header h1 span:nth-of-type(1) {
+    text-indent: 0.3em;
+    letter-spacing: 0.3em;
+    font-size: 2em;
+    font-family: var(--en-font2);
+}
+
+header h1 span:nth-of-type(2) {
+    position: absolute;
+    right: -0.5em;
+    bottom: -0.5em;
+    font-size: 1.5em;
+    font-family: var(--en-font1);
+    color: var(--white);
+}
+
+header img {
+    display: block;
+    margin: 1em auto 0;
+    width: 80%;
+    max-width: 500px;
+    height: 70vh;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    object-fit: cover;
+}
+
+/* コンテンツ */
+main {
+    margin: 0 auto 3em;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* セクション */
+section {
+    padding: 1.5em;
+    background-color: var(--white);
+}
+
+section h2 {
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    border-left: 5px solid var(--color);
+    font-family: var(--en-font2);
+    font-size: 1em;
+}
+
+section h3{
+    display: inline-block;
+    padding: 0 0.5em;
+    background-color: var(--color);
+    font-family: var(--en-font2);
+    font-size: 12px;
+    color: var(--white);
+}
+
+section > p{
+    margin: 0 auto 1.5em;
+    word-break: break-all;
+}
+
+.box{
+    margin: 1em auto;
+    padding: 1em;
+    border: thin solid var(--color3);
+    font-size: 12px;
+}
+</style>
