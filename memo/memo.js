@@ -25,7 +25,7 @@ const memoPosts = [
         id: "post-20261128",
         date: "2026.11.28",
         text: "少しずつ整理整頓をしています",
-        moreText: ",
+        moreText: "",
     },
     {
         id: "post-20261119",
